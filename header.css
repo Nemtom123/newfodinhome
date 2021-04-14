@@ -1,0 +1,36 @@
+.header{
+    background-image: url(images/10.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: auto;
+    max-height: 600px;
+}
+.header h2{
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #000019;
+    letter-spacing: 2px;
+}
+.header p{
+    margin: 1rem auto;
+    color: #000019;
+    font-weight: 600;
+    font-size: 2rem;
+    text-align: center;
+}
+.header button{
+    margin: 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+.header button:hover{
+    background: #fff;
+    color: #000;
+}
