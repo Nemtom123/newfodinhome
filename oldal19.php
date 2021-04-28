@@ -13,32 +13,49 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <script src="bootstrap-4.5.3-dist/js/bootstrap.js"></script>
-
+    <style>
+         .parallax1 {
+        background-image: url(images/10.jpg);
+        min-height: 200px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    </style>
 </head>
-<body>
+<body style="background-color:#d0c4350f;">
 
 <?php
 include_once 'NavMenu.php';
 ?>
-
-<section class = "header">
-    <h2>szöveg</h2>
-    <p >szöveg helye</p>
-</section>
 <br>
-<!-- Belső rész -->
-<div class="container">
+    <div class="container">
     <div class="row">
-        <div class="col-md-4">
-            <img class="card-img" src="images/10.jpg" alt="Card image">
-        </div>
-        <br><br>
-        <div class="col-md-8">
-            <h2 class="h4 card-title m-b-1 text-uppercase verso-mb-3"> szöveg</h2>
-            <p class="card-text">szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg. </p>
-        </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+       <div class="section_info__img">
+			<img src="images/4.jpg" alt="Fodin-Home Kft">
+		</div>
+      </div>
     </div>
+  </div>
+  <br>
+  <br>
+  <div class="col-sm-6">
+    <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum voluptas, aut ea quae!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum voluptas, aut ea quae!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum voluptas, aut ea quae!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum voluptas, aut ea quae!	
+      </div>
+    </div>
+  </div>
 </div>
+<br>
+<!--<div class="parallax1"></div>-->
 <br>
 <hr>
 <br>
@@ -49,9 +66,8 @@ include_once 'NavMenu.php';
                 <div class="card mx-30">
                   <img src="images/3.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title fodin-button">Fodor Norbert</h5>
-                    <button class="fodin" type="button">TOVÁBB <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
-<h6>Igazgató</h6>
+                    <h5 class="card-title"></h5>
+                      <h6></h6>
 <p class="card-text">
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse amet repellat, eaque aliquid similique eius alias facilis quisquam, ipsa dolor.</p>
 <div class="socials">
@@ -67,9 +83,8 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse amet repellat, ea
                 <div class="card mx-30">
                   <img src="images/3.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Fodor Norbert</h5>
-<h6>
-Igazgató</h6>
+                    <h5 class="card-title"></h5>
+                <h6></h6>
 <p class="card-text">
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse amet repellat, eaque aliquid similique eius alias facilis quisquam, ipsa dolor.</p>
 <div class="socials">
@@ -85,10 +100,8 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse amet repellat, ea
                 <div class="card mx-30">
                   <img src="images/3.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">
-Fodor Norbet</h5>
-<h6>
-Igazgató</h6>
+                    <h5 class="card-title"></h5>
+<h6>                </h6>
 <p class="card-text">
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse amet repellat, eaque aliquid similique eius alias facilis quisquam, ipsa dolor.</p>
 
@@ -107,18 +120,34 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse amet repellat, ea
 <br>
 <hr>
 <br>
+<br>
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
-            <h2 class="h4 card-title m-b-1 text-uppercase verso-mb-3"> szöveg</h2>
-            <p class="card-text"> szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg szöveg.</p>
-        </div>
-        <div class="col-md-4">
-            <img class="card-img" src="images/3.jpg" alt="Card image">
-        </div>
+      <div class="col-sm-6">
+        
+        <h5 class="card-title">
+        <div class="btn btn-watb btn-watb-border" style="border: 1px solid goldenrose;">Lorem ipsum dolor sit amet</div>
+        </h5>
+        <div class="btn btn-watb btn-watb-border"></div>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum voluptas, aut ea quae!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum voluptas, aut ea quae!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum voluptas, aut ea quae!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum voluptas, aut ea quae!	
+      </div>
+      <br>
+      <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+       <div class="section_info__img">
+			<img src="images/4.jpg" alt="Fodin-Home Kft">
+		</div>
+      </div>
+    </div>
+  </div>
     </div>
 </div>
-<br>
+</div>
 <br>
 <!-- /Belső rész vége-->
 <?php
@@ -157,3 +186,8 @@ include_once 'footer.php';
 </script>
 </body>
 </html>
+
+
+
+    
+    
