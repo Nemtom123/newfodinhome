@@ -1,0 +1,8 @@
+<?php
+include_once './Kozos.php';
+
+Fejlec();
+print "<div class=\"container\">";
+print "</div>";
+Lablec();
+?>

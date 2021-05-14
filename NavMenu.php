@@ -72,11 +72,9 @@
                             <li><a href="oldal26.php">Szöveg</a></li>
                         </ul>
                     </li>
-                    <li><a href="oldal27.php">Szöveg</a>
+                    <li><a href="login/index.php">Belépés</a>
                         <ul>
-                            <li><a href="oldal28.php">Szöveg</a></li>
-                            <li><a href="oldal29.php">Szöveg</a></li>
-                            <li><a href="oldal30.php">Szöveg</a></li>
+                        <li><img src="images/10.jpg" style="max-width: 250px; height: 200px"></li>
                         </ul>
                     </li>
                     <li><a href="kontakt.php">Kontakt</a>
