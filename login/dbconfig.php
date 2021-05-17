@@ -2,7 +2,7 @@
 class Database
 {   
     private $host = "localhost";
-    private $db_name = "watb;charset=utf8";
+    private $db_name = "fodinhome;charset=utf8";
     private $username = "Tomi";
     private $password = "TOMcsika1969";
 

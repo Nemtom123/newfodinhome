@@ -1,13 +1,12 @@
 <?php
-
 require_once("class.user.php");
 session_start();
 $login = new USER();
 if ($_SERVER['QUERY_STRING'] == ''){
-    $login->redirectlogin('/dashboard.php');
+  //  $login->redirectlogin('index.php');
 }
 if ($login->is_loggedin() != "") {
-   $login->redirectlogin('dashboard.php');
+    $login->redirectlogin('dashboard.php');
 }
 
 if (isset($_POST['btn-loginka'])) {
@@ -16,7 +15,7 @@ if (isset($_POST['btn-loginka'])) {
     $upass = strip_tags($_POST['txt_password']);
 
     if ($login->doLoginka($uname, $umail, $upass)) {
-      $login->redirectlogin('dashboard.php');
+        $login->redirectlogin('dashboard.php');
     } else {
 
         $error = "Ez most nem jött össze !";
