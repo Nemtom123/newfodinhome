@@ -25,7 +25,7 @@
                     //print_r($kertadat['oldalak_szoveg_ru']);
                     ?>
 
-                </textarea>
+    </textarea>
     <script>
         ClassicEditor
             .create(document.querySelector('#editor1'))

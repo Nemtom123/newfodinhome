@@ -6,19 +6,22 @@
  * Time: 14:46
  */
 ?>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 offset-md-4">
+            <select class="selectpicker" data-live-search="true" name="replay">
+                <option data-tokens="ketchup mustard" value="0">Kérlek válassz</option>
+                <?php
+               for ($i = 1; $i <= 20; $i++) { ?>
 
-<select class="selectpicker" data-live-search="true" name="replay">
-    <?php
-    $i = 0;
-    $files = glob("../*.php");
-    foreach ($files as $value) {
-        $str2 = substr($value, 3);
-        $str3 = substr_replace($str2, "", -4) . "\n";
-        ?>
-        <option data-tokens="ketchup mustard" name="valaszt"
-          value="<?php echo $i++; "\n"; echo '...'; "\n"; echo $str3; "\n"; ?>"><?php echo $str3; ?></option>
-    <?php } ?>
-</select>
+                    <option data-tokens="ketchup mustard"
+                            value="<?php echo $i; "\n"; echo '...'; "\n"; ?>"><?php echo $i; ?></option>
+                <?php } ?>
+            </select>
+        </div>
+    </div>
+</div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
 <script src="bootstrap-select-1.13.14/dist/js/bootstrap-select.js"></script>
