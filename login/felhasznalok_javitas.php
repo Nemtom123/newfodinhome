@@ -1,11 +1,11 @@
 <?php
 include_once 'head.php';
 Head();
-include_once('PDOSQL.php');
+include_once('class.user.php');
 $id = Beallitas_GET("id", "0");
-//$PDOSQL = new PDOSQL("MsSql");
+$auth_user = new USER();
 //$PDOSQL->Kapcsolodas();
-$_SESSION['id'] = $id;
+//$_SESSION['id'] = $id;
 
 
 ?>
@@ -25,10 +25,13 @@ $_SESSION['id'] = $id;
                     </div>
                     <form method="post" class="form-signin">
                         <?php
+                        $stmt = $auth_user->runQuery("SELECT * FROM users WHERE user_id = 2");
+                        $stmt->execute(array());
+                        $sor = $stmt->fetch(PDO::FETCH_ASSOC);
+                        $st = $auth_user->runQuery("SELECT * FROM users");
+                        $st->execute(array());
+                       
                         /*
-                        $lekerdezes = "SELECT * FROM [dbo].[FelhasznalokLista] () Where [id] = '".$id."'";
-                        $PDOSQL->Lekerdezes($lekerdezes);
-                        $sor = $PDOSQL->fetch_array();
                         $lekerdezesek = "SELECt * FROM [dbo].[BeosztasLista]()";
                         $PDOSQL->Lekerdezes($lekerdezesek);
                         */
@@ -42,7 +45,7 @@ $_SESSION['id'] = $id;
                                             <label for="exampleFormControlSelect1">Név</label>
                                             <input type="text" class="form-control" id="TeljesNev"
                                                    name="TeljesNev"
-                                                   value="<?php //echo isset($sor['TeljesNev']) ? $sor['TeljesNev'] : NULL; ?>"
+                                                   value="<?php echo isset($sor['user_name']) ? $sor['user_name'] : NULL; ?>"
                                                    placeholder="" required>
                                         </div>   
                                     </div>
@@ -52,9 +55,9 @@ $_SESSION['id'] = $id;
                                         <div class="form-group">
                                             <label for="exampleFormControlSelect1">Beosztás</label>
                                             <select class="form-control" name="Beosztas">
-                                            <?php //while ($sor = $PDOSQL->fetch_array($lekerdezesek)) { ?>
-                                                <option value="<?php // echo($sor['ID']);?>" ><?php // echo($sor['Megnevezes']);?></option>
-                                            <?php // } ?>
+                                            <?php while ($sorok = $st->fetch(PDO::FETCH_ASSOC)) { ?>
+                                                <option value="<?php echo($sorok['user_id']);?>" ><?php  echo($sorok['user_email']);?></option>
+                                            <?php  } ?>
                                             </select>
                                         </div>
                                     </div>

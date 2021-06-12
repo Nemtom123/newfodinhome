@@ -48,7 +48,7 @@ header.light { background-color: #fff; }
 /* Navigation Styles */
 nav { position: relative;  }
 header.dark nav { background-color: #1da1f2; }
-header.light nav { background-color:rgba(0,0,0,0.5); }
+header.light nav { background-color:rgba(0, 0, 0, 0.74); }
 
 ul.main-nav {
     list-style-type: none;
@@ -56,7 +56,7 @@ ul.main-nav {
     font-size: 0;
     /* max-width: 1000px; */
     margin: 0 auto;
-    background-color: #4c5b64;
+    background-color: #103143;
     color: white;
     font-family: initial;
 }
@@ -393,16 +393,28 @@ ul.main-nav > li ul.sub-menu-lists > li > a {
     margin-left: 0;
 }
 
-.polilakk-card-header{
-    background-color: #1da1f2;
+.fodinhome-card-header{
+    background-color: #103143;
     color: white;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     padding: .75rem 1.25rem;
     margin-bottom: 0;
     margin-top: 0;
     border-bottom: 1px solid rgba(0,0,0,.125);
 }
+
+.fodinhome1-card-header{
+    background-color: #fafafa;
+    color: #103143;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    margin-top: 0;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
 
 .polilakk-card-footer{
     background-color: #1da1f2;
@@ -429,4 +441,11 @@ ul.main-nav > li ul.sub-menu-lists > li > a {
     background-color: white;
     color: black;
     cursor: pointer;
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }

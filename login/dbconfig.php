@@ -5,9 +5,8 @@ class Database
     private $db_name = "fodinhome;charset=utf8";
     private $username = "Tomi";
     private $password = "TOMcsika1969";
-
     public $conn;
-     
+
     public function dbConnection()
 	{
      

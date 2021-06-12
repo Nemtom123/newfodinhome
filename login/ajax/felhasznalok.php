@@ -1,6 +1,7 @@
 <?php
-include_once '../PDOSQL.php';
-$PDOSQL = new PDOSQL("MsSql");
+include_once '../class.user.php';
+$auth_user = new USER();
+//$user_id = $_SESSION['user_session'];
 $eredmeny_tomb = array();
 $eredmeny_tomb['data'] = array();
 
@@ -9,23 +10,22 @@ $iTotalDisplayRecords = 0;
 $sEcho  = 0;
 $sColumns = "";
 
-$PDOSQL->Kapcsolodas();
-$lekerdezes = "select * from [dbo].[FelhasznalokLista]()";
-$PDOSQL->Lekerdezes($lekerdezes);
-while ( $a = $PDOSQL->fetch_array() ){
+$stmt = $auth_user->runQuery("SELECT * FROM users");
+$stmt->execute(array());
+while ( $sor = $stmt->fetch(PDO::FETCH_ASSOC)){
     $iTotalRecords++;
     $iTotalDisplayRecords++;
     array_push($eredmeny_tomb['data'],array(
-        "id"=>$a['id'],
-        "TeljesNev"=>$a['TeljesNev'],
-        "Beosztas"=>$a['Beosztas'],
-        "DT_RowId"=>$a['id']
+        "user_id"=>$sor['user_id'],
+        "user_name"=>$sor['user_name'],
+        "user_email"=>$sor['user_email'],
+        "user_pass"=>$sor['user_pass']
     ));
+   // print_r($sor);
 }
 $eredmeny_tomb['iTotalRecords'] = $iTotalRecords;
 $eredmeny_tomb['iTotalDisplayRecords'] = $iTotalDisplayRecords;
 $eredmeny_tomb['sEcho'] = $sEcho;
 $eredmeny_tomb['sColumns'] = $sColumns;
-$PDOSQL->KapcsolatLezaras();
 print json_encode($eredmeny_tomb);
 ?>

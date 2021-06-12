@@ -28,7 +28,7 @@ Menu();
             <div class="col-sm-6" style="margin-top: 5px">
                 <h5><b style="padding-top: 20px"><span> Felhasználók </span></b></h5>
             </div>
-            <div class="col-sm-6" style="">
+            <div class="col-sm-6">
                 <button name="ujfelvitel" VALUE="új felvitel" type="submit"  class="btn btn-success" data-toggle="modal"  value="Új felvitele" id="btn" onClick="Szerkesztes(0);"><i class="material-icons">&#xE147;</i>
                     <span> új felvitel </span></button>
             </div>
@@ -42,8 +42,9 @@ Menu();
                     <thead>
                     <tr>
 
+                        <th>Id</th>
                         <th>Név</th>
-                        <th>Beosztás</th>
+                        <th>Email</th>
                         <th></th>
                         <th></th>
 
@@ -53,6 +54,7 @@ Menu();
                     <tfoot>
                     <tr>
 
+                        <th></th>
                         <th></th>
                         <th></th>
                         <th></th>
@@ -80,8 +82,9 @@ Menu();
                 'bAutoWidth': true,
                 'bSort': false,
                 'columns': [
-                    { "data": "TeljesNev", "name": "TeljesNev" },
-                    { "data": "Beosztas", "name": "Beosztas" },
+                    { "data": "user_id", "name": "user_id" },
+                    { "data": "user_name", "name": "user_name" },
+                    { "data": "user_email", "name": "user_email" },
                     {defaultContent : "<button type='button' class='btn'  data-azonositas='1'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></button>"},
                     {defaultContent : "<button type='button' class='btn'  data-azonositas='2'><i class='fa fa-trash-o' aria-hidden='true'></i></button>"}
                 ],
@@ -122,8 +125,7 @@ Menu();
                     AddEsemeny();
                 },
                 'fnRowCallback': function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
-
-                    return nRow;
+                     return nRow;
                 }
             });
 
@@ -135,7 +137,6 @@ Menu();
             //TablazatFrissites();
         });
 
-
         function TablazatFrissites() {
 
             var tabla = $('#Table').dataTable().api();
@@ -143,9 +144,25 @@ Menu();
 
             tabla.one("draw", function () { DataTablesColumnAdjust("#Table"); });
         }
-        function AddEsemeny(){
+        // function AddEsemeny(){
+        //   //  $('#example tbody tr td button[type="button"]').on('click', function () {
+        //         $('#example tbody').on( 'click', function () {
+        //             var azonositas = $(this).data('azonositas');
+        //             var row = $(this).closest('tr');
+        //             var id = row.attr('id')
+        //             switch ( azonositas*1 ){
+        //                 case 1 : Szerkesztes(id);
+        //                     break;
+        //                 case 2 : Torles(id);
+        //                     break;
+        //             }
+        //
+        //         });
+        // }
+        function AddEsemeny() {
+            var table = $('#example').DataTable();
 
-            $("#example tbody tr td button[type='button']").on("click", function () {
+            $('#example tbody').on('click', 'tr', function () {
                 var azonositas = $(this).data('azonositas');
 
                 var row = $(this).closest('tr');
@@ -156,22 +173,17 @@ Menu();
                     case 2 : Torles(id);
                         break;
                 }
-
             });
         }
 
-
-        function Szerkesztes( id ){
-            // $.redirect("felhasznalok_javitas.php", { "id": id });
-            window.location='felhasznalok_javitas.php?id='+id;
+        function Szerkesztes(id){
+         //window.location='felhasznalok_javitas.php?id='+id;
         }
 
-
         function Torles(id) {
-
 				BootstrapDialog.show({
 					type:BootstrapDialog.TYPE_DANGER,
-					title : 'Felhasználó törlése',
+					title : 'Felhasználó törlése'+id,
 					message: 'Biztosan törölni szeretnéd ?',
 					data: {
 						'user_id': id
@@ -186,7 +198,7 @@ Menu();
 						label: 'Törlés',
 						cssClass: 'btn-primary',
 						action: function(dialogRef){				
-							window.location = 'felhasznalok_torles.php?id='+dialogRef.getData('user_id')+'';
+							window.location = 'felhasznalok_torles.php?id='+dialogRef.getData('id')+'';
 						}
 					}]
 				});

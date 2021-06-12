@@ -3,7 +3,7 @@ require_once("class.user.php");
 session_start();
 $login = new USER();
 if ($_SERVER['QUERY_STRING'] == ''){
-  //  $login->redirectlogin('index.php');
+   // $login->redirectlogin('index.php');
 }
 if ($login->is_loggedin() != "") {
     $login->redirectlogin('dashboard.php');
