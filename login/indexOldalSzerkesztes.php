@@ -13,17 +13,12 @@
     <span><i class="fas fa-arrow-alt-circle-right" ></i></span>
     <textarea id="editor1" name="oldalak_szoveg" title="">
                     <?php
-                    //                    include_once 'Oldlalak.php';
-                    //                   $leker = new namespace\watb\Oldlalak();
-                    //                   $beker = $leker->runQuery("SELECT * FROM oldalak WHERE oldalak_id = '$value'");
-                    //                   $beker->execute([]);
-                    //                   $kertadat = $beker->fetch(PDO::FETCH_ASSOC);
+                        include_once 'OldalakPdo.php';
+                        $leker = new namespace\fodinhome\OldalakPdo();
+                        $beker = $leker->runQuery("SELECT * FROM oldalak WHERE oldalak_id = '$value'");
+                        $beker->execute([]);
+                        $kertadat = $beker->fetch(PDO::FETCH_ASSOC);
                     ?>
-
-                    <?php
-                    //print_r($kertadat['oldalak_szoveg_ru']);
-                    ?>
-
                 </textarea>
     <script>
         ClassicEditor
@@ -47,13 +42,6 @@
                 </div>
                 <span><i class="fas fa-arrow-alt-circle-right" ></i></span>
                 <textarea id="editor2" name="oldalak_szoveg" title="">
-                    <?php
-                    //                    include_once 'Oldlalak.php';
-                    //                   $leker = new namespace\watb\Oldlalak();
-                    //                   $beker = $leker->runQuery("SELECT * FROM oldalak WHERE oldalak_id = '$value'");
-                    //                   $beker->execute([]);
-                    //                   $kertadat = $beker->fetch(PDO::FETCH_ASSOC);
-                    ?>
 
                     <?php
                     //print_r($kertadat['oldalak_szoveg_ru']);
@@ -79,15 +67,7 @@
                 </div>
                 <span><i class="fas fa-arrow-alt-circle-right" ></i></span>
                 <textarea id="editor3" name="oldalak_szoveg" title="">
-                    <?php
-                    //                    include_once 'Oldlalak.php';
-                    //                   $leker = new namespace\watb\Oldlalak();
-                    //                   $beker = $leker->runQuery("SELECT * FROM oldalak WHERE oldalak_id = '$value'");
-                    //                   $beker->execute([]);
-                    //                   $kertadat = $beker->fetch(PDO::FETCH_ASSOC);
-                    ?>
-
-                    <?php
+                  <?php
                     //print_r($kertadat['oldalak_szoveg_ru']);
                     ?>
 
@@ -112,15 +92,7 @@
                 <span><i class="fas fa-arrow-alt-circle-right" ></i></span>
                 <textarea id="editor4" name="oldalak_szoveg" title="">
                     <?php
-                    //                    include_once 'Oldlalak.php';
-                    //                   $leker = new namespace\watb\Oldlalak();
-                    //                   $beker = $leker->runQuery("SELECT * FROM oldalak WHERE oldalak_id = '$value'");
-                    //                   $beker->execute([]);
-                    //                   $kertadat = $beker->fetch(PDO::FETCH_ASSOC);
-                    ?>
-
-                    <?php
-                    //print_r($kertadat['oldalak_szoveg_ru']);
+                    print_r($kertadat['szoveg_1']);
                     ?>
 
                 </textarea>
@@ -147,11 +119,9 @@
     <span><i class="fas fa-arrow-alt-circle-right" ></i></span>
     <textarea id="editor5" name="oldalak_szoveg" title="">
                     <?php
-                    //                    include_once 'Oldlalak.php';
-                    //                   $leker = new namespace\watb\Oldlalak();
-                    //                   $beker = $leker->runQuery("SELECT * FROM oldalak WHERE oldalak_id = '$value'");
-                    //                   $beker->execute([]);
-                    //                   $kertadat = $beker->fetch(PDO::FETCH_ASSOC);
+                        $beker = $leker->runQuery("SELECT * FROM oldalak WHERE oldalak_id = '$value'");
+                        $beker->execute([]);
+                        $kertadat = $beker->fetch(PDO::FETCH_ASSOC);
                     ?>
 
                     <?php

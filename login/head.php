@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 if (session_id() == "") {
     session_start();
 }
-
+include 'dbconfig.php';
 function Head()
 { ?>
     <!DOCTYPE html>
@@ -237,11 +237,10 @@ function Menu()
                             <li></a></li>
                         </ul>
                     </div>
-                    <div class="col-md-2 col-lg-2 col-sm-2">
+<!--             <div class="col-md-2 col-lg-2 col-sm-2">
                         <h2 class="sub-menu-head"></h2>
-                        <!--<div class="color-hr"></div>-->
                         <ul class="sub-menu-lists">
-                            <li><a href="kilep.php">Kilép</a></li>
+                            <li><a href="ujjelszo.php">Új jelszó létrehozása</a></li>
                             <div class="color-hr"></div>
                             <li><a></a></li>
                             <li><a></a></li>
@@ -249,11 +248,23 @@ function Menu()
                             <li></a></li>
                         </ul>
                     </div>
+                 <div class="col-md-2 col-lg-2 col-sm-2">
+                        <h2 class="sub-menu-head"></h2>
+                        <ul class="sub-menu-lists">
+                            <li><a href="ujjelszo.php">Új felhasználó</a></li>
+                            <div class="color-hr"></div>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                            <li></a></li>
+                        </ul>
+                    </div>
+-->
                     <div class="col-md-2 col-lg-2 col-sm-2">
                         <h2 class="sub-menu-head"></h2>
                         <!--<div class="color-hr"></div>-->
                         <ul class="sub-menu-lists">
-                            <li><a href="ujjelszo.php">Új jelszó létrehozása</a></li>
+                            <li><a href="kilep.php">Kilép</a></li>
                             <div class="color-hr"></div>
                             <li><a></a></li>
                             <li><a></a></li>

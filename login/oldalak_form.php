@@ -14,12 +14,7 @@
 Menu();
 echo '<hr>';
 ob_start();
-include_once('class.user.php');
-$auth_user = new USER();
-$user_id = $_SESSION['user_session'];
-$stmt = $auth_user->runQuery("SELECT * FROM users WHERE user_id=:user_id");
-$stmt->execute(array(":user_id" => $user_id));
-$userRow = $stmt->fetch(PDO::FETCH_ASSOC);
+
 ?>
 <body>
 <div class="container">
@@ -33,31 +28,39 @@ $userRow = $stmt->fetch(PDO::FETCH_ASSOC);
                 </div>
                 <br>
                 <?php
-                if ($_POST['replay'] == 2 OR $_POST['replay'] == 4 OR $_POST['replay'] == 19 OR $_POST['replay'] == 38 OR $_POST['replay'] == 8 OR $_POST['replay'] == 14 OR $_POST['replay'] == 19){
-                    include 'indexOldalSzerkesztes.php';
-                    }
-                ?>
+              $replay  =   (isset($_POST['replay'])) ? $_POST['replay'] : null;
+                if ($replay == 2 OR $replay == 4 OR $replay == 19 OR $replay == 38 OR $replay == 8 OR $replay == 14 OR $replay == 19){
+                    include 'indexOldalSzerkesztes.php';   ?>
+                    <br>
+                    <br>
+                    <button class="btn btn-success pull-left" id="btn-rogzit" name="btn-rogzit" value="rogzit"
+                            type="submit" onclick="myfunction">Rögzít
+                    </button>
+                    <button class="btn btn-info pull-right" id="btn-rogzit" name="btn-rogzit" value="vissza"
+                            type="submit" onclick="myfunction"><a href="oldalak.php" style="color: white"> Vissza </a>
+                    </button>
+                <?php } ?>
+
                 <?php
-                if ($_POST['replay'] == 15 OR $_POST['replay'] == 26 OR $_POST['replay'] == 33 OR $_POST['replay'] == 35 OR $_POST['replay'] == 36 OR $_POST['replay'] == 37 OR $_POST['replay'] == 5 OR $_POST['replay'] == 6 OR $_POST['replay'] == 7 OR $_POST['replay'] == 10 OR $_POST['replay'] == 11 OR $_POST['replay'] == 12 OR $_POST['replay'] == 16 OR $_POST['replay'] == 17 OR $_POST['replay'] == 18 OR $_POST['replay'] == 20 OR $_POST['replay'] == 21 OR $_POST['replay'] == 22) {
-                    include 'oldalakSzerkesztes.php';
-                }
-                ?>
+                if ($replay == 15 OR $replay == 26 OR $replay == 33 OR $replay == 35 OR $replay == 36 OR $replay == 37 OR $replay == 5 OR $replay == 6 OR $replay == 7 OR $replay == 10 OR $replay == 11 OR $replay == 12 OR $replay == 16 OR $replay == 17 OR $replay == 18 OR $replay == 20 OR $replay == 21 OR $replay == 22) {
+                    include 'oldalakSzerkesztes.php'; ?>
+                    <br>
+                    <br>
+                    <button class="btn btn-success pull-left" id="btn-rogzit" name="btn-rogzit" value="rogzit"
+                            type="submit" onclick="myfunction">Rögzít
+                    </button>
+
+                    <button class="btn btn-info pull-right" id="btn-rogzit" name="btn-rogzit" value="vissza"
+                            type="submit" onclick="myfunction"><a href="oldalak.php" style="color: white"> Vissza </a>
+                    </button>
+                <?php } ?>
+            </form>
+
                 <?php
-                if ($_POST['replay'] == 0){
+                if ($replay == 0){
                     include 'navMenuSzerkesztes.php';
                 }
                 ?>
-                <br>
-                <br>
-                <button class="btn btn-success pull-left" id="btn-rogzit" name="btn-rogzit" value="rogzit"
-                        type="submit" onclick="myfunction">Rögzít
-                </button>
-
-                <button class="btn btn-info pull-right" id="btn-rogzit" name="btn-rogzit" value="vissza"
-                        type="submit" onclick="myfunction"><a href="oldalak.php" style="color: white"> Vissza </a>
-                </button>
-
-            </form>
         </div>
     </div>
 </div>

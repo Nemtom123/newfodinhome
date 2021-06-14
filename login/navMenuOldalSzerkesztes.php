@@ -7,35 +7,28 @@
  */
 ?>
 
-<div class="card spur-card">
-    <div class="fodinhome1-card-header">
-        <?php foreach ($_POST as $value) { echo substr($value, 1); } ?> szerkesztése
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 offset-md-4">
+            <form method="post" class="form-signin">
+                <!-- Select tartalmazza selectpicker   class="selectpicker" data-live-search="true" name="jav" onChange="this.form.submit()" -->
+                <select data-toggle="dropdown" style="width:440px; background-color: yellow" class="selectpicker"
+                        data-live-search="true" name="jav" onChange="this.form.submit()" title="">
+                    <option value="" style="width:440px">Menü szerkesztés</option>
+                    <option value="0" style="width:440px" name="elnevezes" placeholder="elnevezés"
+                            onChange="this.form.submit()">Új menü felvétele
+                    </option>
+                    <?php
+                    $user = new fodinhome\NaviClass();
+                    $stmt = $user->runQuery("SELECT * FROM navmenu ");
+                    $stmt->execute();
+                    $i = '1';
+                    while ($sor = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        print "<option style='width:440px' value='" . $sor['nav_id'] . "' >" . $sor['elnevezes'] . ' ' . $i++ . "</option>";
+                    }
+                    ?>
+                </select>
+            </form>
+        </div>
     </div>
-    <span><i class="fas fa-arrow-alt-circle-right" ></i></span>
-    <textarea id="editor1" name="oldalak_szoveg" title="">
-                    <?php
-                    //                    include_once 'Oldlalak.php';
-                    //                   $leker = new namespace\watb\Oldlalak();
-                    //                   $beker = $leker->runQuery("SELECT * FROM oldalak WHERE oldalak_id = '$value'");
-                    //                   $beker->execute([]);
-                    //                   $kertadat = $beker->fetch(PDO::FETCH_ASSOC);
-                    ?>
-
-                    <?php
-                    //print_r($kertadat['oldalak_szoveg_ru']);
-                    ?>
-
-    </textarea>
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#editor1'))
-            .then(editor => {
-                console.log(editor);
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    </script>
 </div>
-
-

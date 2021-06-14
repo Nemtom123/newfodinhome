@@ -13,8 +13,8 @@
     <span><i class="fas fa-arrow-alt-circle-right" ></i></span>
     <textarea id="editor1" name="oldalak_szoveg" title="">
                     <?php
-                    //                    include_once 'Oldlalak.php';
-                    //                   $leker = new namespace\watb\Oldlalak();
+                    //                    include_once 'OldalakPdo.php';
+                    //                   $leker = new namespace\watb\OldalakPdo();
                     //                   $beker = $leker->runQuery("SELECT * FROM oldalak WHERE oldalak_id = '$value'");
                     //                   $beker->execute([]);
                     //                   $kertadat = $beker->fetch(PDO::FETCH_ASSOC);
@@ -45,8 +45,8 @@
     <span><i class="fas fa-arrow-alt-circle-right" ></i></span>
     <textarea id="editor5" name="oldalak_szoveg" title="">
                     <?php
-                    //                    include_once 'Oldlalak.php';
-                    //                   $leker = new namespace\watb\Oldlalak();
+                    //                    include_once 'OldalakPdo.php';
+                    //                   $leker = new namespace\watb\OldalakPdo();
                     //                   $beker = $leker->runQuery("SELECT * FROM oldalak WHERE oldalak_id = '$value'");
                     //                   $beker->execute([]);
                     //                   $kertadat = $beker->fetch(PDO::FETCH_ASSOC);
