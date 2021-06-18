@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3c75f57-74d4-4e20-8ae9-2330f2bb2a59" name="Default" comment="newfodinhome /2021.06.18 05:55" />
+    <list default="true" id="f3c75f57-74d4-4e20-8ae9-2330f2bb2a59" name="Default" comment="newfodinhome /2021.06.18 05:55">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -161,6 +163,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -238,6 +241,8 @@
       <workItem from="1623566426556" duration="18286000" />
       <workItem from="1623872957278" duration="1023000" />
       <workItem from="1623945098182" duration="8977000" />
+      <workItem from="1623989457250" duration="309000" />
+      <workItem from="1623989785618" duration="177000" />
     </task>
     <task id="LOCAL-00001" summary="newfodinhome /2021.04.14 13:58">
       <created>1618401688905</created>
@@ -274,7 +279,21 @@
       <option name="project" value="LOCAL" />
       <updated>1623646025199</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="newfodinhome /2021.06.18 05:55">
+      <created>1623989671308</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1623989671308</updated>
+    </task>
+    <task id="LOCAL-00007" summary="newfodinhome /2021.06.18 05:55">
+      <created>1623989736449</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1623989736449</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -337,6 +356,43 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="fd577bd4-5fc9-4490-adff-a8aabb34e9d3">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:C:/xampp_1/htdocs/newfodinhome/bootstrap-4.5.3-dist" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="fd577bd4-5fc9-4490-adff-a8aabb34e9d3" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -347,7 +403,8 @@
     <MESSAGE value="newfodinhome /2021.04.14 13:58" />
     <MESSAGE value="newfodinhome /2021.05.17 11:35" />
     <MESSAGE value="newfodinhome /2021.06.12 11:55" />
-    <option name="LAST_COMMIT_MESSAGE" value="newfodinhome /2021.06.12 11:55" />
+    <MESSAGE value="newfodinhome /2021.06.18 05:55" />
+    <option name="LAST_COMMIT_MESSAGE" value="newfodinhome /2021.06.18 05:55" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/login/head.php">
