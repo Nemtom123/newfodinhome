@@ -11,13 +11,16 @@
         <?php foreach ($_POST as $value) { echo $str2  = substr($value, 4); $str3 = substr_replace($str2, "", -4) . "\n"; } ?> szerkesztése
     </div>
     <span><i class="fas fa-arrow-alt-circle-right" ></i></span>
-    <textarea id="editor1" name="oldalak_szoveg" title="">
+    <textarea id="editor1" name="oldalak_szoveg_1" title="">
                     <?php
+                      foreach ($_POST as $value) {  $str2  = substr($value, 0);  $str3 = substr_replace($str2, "", 1) . "\n"; }
                         include_once 'OldalakPdo.php';
                         $leker = new namespace\fodinhome\OldalakPdo();
-                        $beker = $leker->runQuery("SELECT * FROM oldalak WHERE oldalak_id = '$value'");
+                        $beker = $leker->runQuery("SELECT * FROM oldalak WHERE oldalak_id = $str3 ");
                         $beker->execute([]);
                         $kertadat = $beker->fetch(PDO::FETCH_ASSOC);
+                        $adat = (isset($kertadat['oldalak_szoveg_1'])) ? $kertadat['oldalak_szoveg_1'] : NULL;
+                        print_r($adat);
                     ?>
                 </textarea>
     <script>
@@ -41,12 +44,11 @@
                     <?php foreach ($_POST as $value) { echo $str2  = substr($value, 4); $str3 = substr_replace($str2, "", -4) . "\n"; } ?> szerkesztése
                 </div>
                 <span><i class="fas fa-arrow-alt-circle-right" ></i></span>
-                <textarea id="editor2" name="oldalak_szoveg" title="">
-
+                <textarea id="editor2" name="oldalak_szoveg_2" title="">
                     <?php
-                    //print_r($kertadat['oldalak_szoveg_ru']);
+                    $adat = (isset($kertadat['oldalak_szoveg_2'])) ? $kertadat['oldalak_szoveg_2'] : NULL;
+                    print_r($adat);
                     ?>
-
                 </textarea>
                 <script>
                     ClassicEditor
@@ -66,11 +68,11 @@
                     <?php foreach ($_POST as $value) { echo $str2  = substr($value, 4); $str3 = substr_replace($str2, "", -4) . "\n"; } ?> szerkesztése
                 </div>
                 <span><i class="fas fa-arrow-alt-circle-right" ></i></span>
-                <textarea id="editor3" name="oldalak_szoveg" title="">
+                <textarea id="editor3" name="oldalak_szoveg_3" title="">
                   <?php
-                    //print_r($kertadat['oldalak_szoveg_ru']);
+                  $adat = (isset($kertadat['oldalak_szoveg_3'])) ? $kertadat['oldalak_szoveg_3'] : NULL;
+                  print_r($adat);
                     ?>
-
                 </textarea>
                 <script>
                     ClassicEditor
@@ -90,11 +92,11 @@
                     <?php foreach ($_POST as $value) { echo $str2  = substr($value, 4); $str3 = substr_replace($str2, "", -4) . "\n"; } ?> szerkesztése
                 </div>
                 <span><i class="fas fa-arrow-alt-circle-right" ></i></span>
-                <textarea id="editor4" name="oldalak_szoveg" title="">
+                <textarea id="editor4" name="oldalak_szoveg_4" title="">
                     <?php
-                    print_r($kertadat['szoveg_1']);
+                    $adat = (isset($kertadat['oldalak_szoveg_4'])) ? $kertadat['oldalak_szoveg_4'] : NULL;
+                    print_r($adat);
                     ?>
-
                 </textarea>
                 <script>
                     ClassicEditor
@@ -117,17 +119,11 @@
         <?php foreach ($_POST as $value) { echo $str2  = substr($value, 4); $str3 = substr_replace($str2, "", -4) . "\n"; } ?> szerkesztése
     </div>
     <span><i class="fas fa-arrow-alt-circle-right" ></i></span>
-    <textarea id="editor5" name="oldalak_szoveg" title="">
+    <textarea id="editor5" name="oldalak_szoveg_5" title="">
                     <?php
-                        $beker = $leker->runQuery("SELECT * FROM oldalak WHERE oldalak_id = '$value'");
-                        $beker->execute([]);
-                        $kertadat = $beker->fetch(PDO::FETCH_ASSOC);
+                    $adat = (isset($kertadat['oldalak_szoveg_5'])) ? $kertadat['oldalak_szoveg_5'] : NULL;
+                    print_r($adat);
                     ?>
-
-                    <?php
-                    //print_r($kertadat['oldalak_szoveg_ru']);
-                    ?>
-
                 </textarea>
     <script>
         ClassicEditor

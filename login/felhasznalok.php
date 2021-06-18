@@ -42,7 +42,7 @@ Menu();
                     <thead>
                     <tr>
 
-                        <th>Id</th>
+
                         <th>Név</th>
                         <th>Email</th>
                         <th></th>
@@ -54,7 +54,7 @@ Menu();
                     <tfoot>
                     <tr>
 
-                        <th></th>
+
                         <th></th>
                         <th></th>
                         <th></th>
@@ -82,7 +82,6 @@ Menu();
                 'bAutoWidth': true,
                 'bSort': false,
                 'columns': [
-                    { "data": "user_id", "name": "user_id" },
                     { "data": "user_name", "name": "user_name" },
                     { "data": "user_email", "name": "user_email" },
                     {defaultContent : "<button type='button' class='btn'  data-azonositas='1'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></button>"},
@@ -144,42 +143,24 @@ Menu();
 
             tabla.one("draw", function () { DataTablesColumnAdjust("#Table"); });
         }
-        // function AddEsemeny(){
-        //   //  $('#example tbody tr td button[type="button"]').on('click', function () {
-        //         $('#example tbody').on( 'click', function () {
-        //             var azonositas = $(this).data('azonositas');
-        //             var row = $(this).closest('tr');
-        //             var id = row.attr('id')
-        //             switch ( azonositas*1 ){
-        //                 case 1 : Szerkesztes(id);
-        //                     break;
-        //                 case 2 : Torles(id);
-        //                     break;
-        //             }
-        //
-        //         });
-        // }
-        function AddEsemeny() {
-            var table = $('#example').DataTable();
+         function AddEsemeny(){
+             $('#example tbody tr td button[type="button"]').on('click', function () {
+               //  $('#example tbody').on( 'click', function () {
+                     var azonositas = $(this).data('azonositas');
+                     var row = $(this).closest('tr');
+                     var id = row.attr('id')
+                     switch ( azonositas*1 ){
+                         case 1 : Szerkesztes(id);
+                             break;
+                         case 2 : Torles(id);
+                             break;
+                     }
 
-            $('#example tbody').on('click', 'tr', function () {
-                var azonositas = $(this).data('azonositas');
-
-                var row = $(this).closest('tr');
-                var id = row.attr('id')
-                switch ( azonositas*1 ){
-                    case 1 : Szerkesztes(id);
-                        break;
-                    case 2 : Torles(id);
-                        break;
-                }
-            });
-        }
-
+                 });
+         }
         function Szerkesztes(id){
-         //window.location='felhasznalok_javitas.php?id='+id;
+         window.location='felhasznalok_javitas.php?id='+id;
         }
-
         function Torles(id) {
 				BootstrapDialog.show({
 					type:BootstrapDialog.TYPE_DANGER,

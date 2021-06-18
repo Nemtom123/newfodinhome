@@ -7,23 +7,31 @@
  */
 ?>
 <div class="card spur-card">
+    <form method="Post" value="oldalSzerkesztesEn.php" >
     <div class="fodinhome1-card-header">
-        <?php foreach ($_POST as $value) { echo $str2  = substr($value, 4); $str3 = substr_replace($str2, "", -4) . "\n"; } ?> szerkesztése
+        <?php foreach ($_POST as $value) {
+            echo $str2 = substr($value, 4);
+            $str3 = substr_replace($str2, "", -4) . "\n";
+        } ?> szerkesztése
+        <button name="ujfelvitel" VALUE="<?php $str3 ?>" type="submit"  class="btn btn-success pull-right" data-toggle="modal"  id="btn" onClick="Szerkesztes(0);"><i class="material-icons">&#xE147;</i>
+            <span> Angol </span></button>
     </div>
-    <span><i class="fas fa-arrow-alt-circle-right" ></i></span>
-    <textarea id="editor1" name="oldalak_szoveg" title="">
+    </form>
+    <span><i class="fas fa-arrow-alt-circle-right"></i></span>
+    <textarea id="editor1" name="al_oldalak_1" title="">
                     <?php
-                    //                    include_once 'OldalakPdo.php';
-                    //                   $leker = new namespace\watb\OldalakPdo();
-                    //                   $beker = $leker->runQuery("SELECT * FROM oldalak WHERE oldalak_id = '$value'");
-                    //                   $beker->execute([]);
-                    //                   $kertadat = $beker->fetch(PDO::FETCH_ASSOC);
+                    foreach ($_POST as $value) {
+                        $str2 = substr($value, 0);
+                        $str3 = substr_replace($str2, "", 1) . "\n";
+                    }
+                    include_once 'OldalakPdo.php';
+                    $leker = new namespace\fodinhome\OldalakPdo();
+                    $beker = $leker->runQuery("SELECT * FROM aloldalak WHERE al_oldalak_id = $str3 ");
+                    $beker->execute([]);
+                    $kertadat = $beker->fetch(PDO::FETCH_ASSOC);
+                    $adat = (isset($kertadat['al_oldalak_1'])) ? $kertadat['al_oldalak_1'] : NULL;
+                    print_r($adat);
                     ?>
-
-                    <?php
-                    //print_r($kertadat['oldalak_szoveg_ru']);
-                    ?>
-
                 </textarea>
     <script>
         ClassicEditor
@@ -40,20 +48,16 @@
 <br>
 <div class="card spur-card">
     <div class="fodinhome1-card-header">
-        <?php foreach ($_POST as $value) { echo $str2  = substr($value, 4); $str3 = substr_replace($str2, "", -4) . "\n"; } ?> szerkesztése
+        <?php foreach ($_POST as $value) {
+            echo $str2 = substr($value, 4);
+            $str3 = substr_replace($str2, "", -4) . "\n";
+        } ?> szerkesztése
     </div>
-    <span><i class="fas fa-arrow-alt-circle-right" ></i></span>
-    <textarea id="editor5" name="oldalak_szoveg" title="">
+    <span><i class="fas fa-arrow-alt-circle-right"></i></span>
+    <textarea id="editor5" name="al_oldalak_2" title="">
                     <?php
-                    //                    include_once 'OldalakPdo.php';
-                    //                   $leker = new namespace\watb\OldalakPdo();
-                    //                   $beker = $leker->runQuery("SELECT * FROM oldalak WHERE oldalak_id = '$value'");
-                    //                   $beker->execute([]);
-                    //                   $kertadat = $beker->fetch(PDO::FETCH_ASSOC);
-                    ?>
-
-                    <?php
-                    //print_r($kertadat['oldalak_szoveg_ru']);
+                    $adat = (isset($kertadat['al_oldalak_2'])) ? $kertadat['al_oldalak_2'] : NULL;
+                    print_r($adat);
                     ?>
 
                 </textarea>
