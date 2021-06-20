@@ -2,7 +2,7 @@
 <link href="bootstrap-4.5.2/dist/css/bootstrap.css" rel="stylesheet"/>
 <link href="bootstrap-4.5.2/dist/css/bootstrap-grid.min.css" rel="stylesheet"/>
 <link href="bootstrap-4.5.2/dist/css/main.css" rel="stylesheet"/>
-<link rel="stylesheet" href="bootstrap-4.5.2/dist/css/polilakk.css">
+<link rel="stylesheet" href="bootstrap-4.5.2/dist/css/fodinhome.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="bootstrap-select-1.13.14/dist/css/bootstrap-select.css">
@@ -22,6 +22,11 @@ ob_start();
                         Admin felület / oldalak szerkesztése
                     </div>
                     <hr>
+                    <?php if (isset($_GET['message']) == 'sikerult') { ?>
+                    <div class="alert alert-primary" role="alert">
+                        Sikeres rögzítés!
+                    </div>
+                    <?php } ?>
                     <div class="card-body">
                         <div class="form-row">
                             <div class="input-group-prepend">

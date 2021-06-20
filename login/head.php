@@ -1,11 +1,9 @@
 <?php
+include 'session.php';
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-if (session_id() == "") {
-    session_start();
-}
 include 'dbconfig.php';
 function Head()
 { ?>
@@ -23,7 +21,7 @@ function Head()
         <link href="bootstrap-4.5.2/dist/css/bootstrap.css" rel="stylesheet"/>
         <link href="bootstrap-4.5.2/dist/css/bootstrap-grid.min.css" rel="stylesheet"/>
         <link href="bootstrap-4.5.2/dist/css/main.css" rel="stylesheet"/>
-        <link rel="stylesheet" href="bootstrap-4.5.2/dist/css/polilakk.css">
+        <link rel="stylesheet" href="bootstrap-4.5.2/dist/css/fodinhome.css">
         <link href="DataTables/DataTables-1.10.22/css/jquery.dataTables.css" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -31,7 +29,7 @@ function Head()
               href="bootstrap-4.5.2/css/bootstrap-dialog.css">
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"
                 integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-         <script src="DataTables/DataTables-1.10.22/js/jquery.dataTables.js"></script>
+        <script src="DataTables/DataTables-1.10.22/js/jquery.dataTables.js"></script>
         <script src="alap/jsandcss/kozos.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
                 integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
@@ -93,8 +91,7 @@ function Beallitas_GET($nev, $ertek)
         $_GET[$nev] = $ertek;
     }
     return $_GET[$nev];
-}//function Beallitas_GET($nev,$ertek) vege
-
+}
 function Menu()
 {
     echo '<nav class="navigation color" style="bacground-color: #13303f">
@@ -111,9 +108,34 @@ function Menu()
                 <div class="row">
                     <div class="col-md-2 col-lg-2 col-sm-2">
                         <h2 class="sub-menu-head"></h2>
-
                         <ul class="sub-menu-lists">
                             <li><a href="oldalak.php">Oldalak</a></li>
+                            <!--<div class="color-hr"></div>-->
+                        </ul>
+                    </div>
+                    <!--<div class="col-md-2 col-lg-2 col-sm-2">
+                        <h2 class="sub-menu-head"></h2>
+
+                        <ul class="sub-menu-lists">
+                            <li><a href="kepek.php">Képek feltöltése</a></li>
+                        </ul>
+                    </div>
+                  <div class="col-md-2 col-lg-2 col-sm-2">
+                        <h2 class="sub-menu-head"></h2>
+
+                        <ul class="sub-menu-lists">
+                            <li><a href=""></a></li>
+                            <div class="color-hr"></div>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-sm-2">
+                        <h2 class="sub-menu-head"></h2>
+
+                        <ul class="sub-menu-lists">
+                            <li><a href=""></a></li>
                             <div class="color-hr"></div>
                             <li><a></a></li>
                             <li><a></a></li>
@@ -121,7 +143,7 @@ function Menu()
                             <li></a></li>
                         </ul>
                     </div>
-                    <!--<div class="col-md-2 col-lg-2 col-sm-2">
+                    <div class="col-md-2 col-lg-2 col-sm-2">
                         <h2 class="sub-menu-head"></h2>
 
                         <ul class="sub-menu-lists">
@@ -134,6 +156,103 @@ function Menu()
                         </ul>
                     </div>
                     <div class="col-md-2 col-lg-2 col-sm-2">
+                        <h2 class="sub-menu-head"></h2>
+                        <ul class="sub-menu-lists">
+                            <li><a href=""></a></li>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                        </ul>
+                    </div>-->
+                </div>
+            </div>
+        </li>
+       <li class="top-level-link">
+            <a class="mega-menu"><span>Képek</span></a>
+            <div class="sub-menu-block">
+                <div class="row">
+                    <div class="col-md-2 col-lg-2 col-sm-2">
+                        <h2 class="sub-menu-head"></h2>
+                        <ul class="sub-menu-lists">
+                            <li><a href="kepek.php">képek feltöltése</a></li>
+                            <!--<div class="color-hr"></div>-->
+                        </ul>
+                    </div>
+                    <!--<div class="col-md-2 col-lg-2 col-sm-2">
+                        <h2 class="sub-menu-head"></h2>
+
+                        <ul class="sub-menu-lists">
+                            <li><a href="kepek.php">Képek feltöltése</a></li>
+                        </ul>
+                    </div>
+                  <div class="col-md-2 col-lg-2 col-sm-2">
+                        <h2 class="sub-menu-head"></h2>
+
+                        <ul class="sub-menu-lists">
+                            <li><a href=""></a></li>
+                            <div class="color-hr"></div>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-sm-2">
+                        <h2 class="sub-menu-head"></h2>
+
+                        <ul class="sub-menu-lists">
+                            <li><a href=""></a></li>
+                            <div class="color-hr"></div>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                            <li></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-sm-2">
+                        <h2 class="sub-menu-head"></h2>
+
+                        <ul class="sub-menu-lists">
+                            <li><a href=""></a></li>
+                            <div class="color-hr"></div>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-sm-2">
+                        <h2 class="sub-menu-head"></h2>
+                        <ul class="sub-menu-lists">
+                            <li><a href=""></a></li>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                        </ul>
+                    </div>-->
+                </div>
+            </div>
+        </li>
+       <li class="top-level-link">
+            <a class="mega-menu"><span>Keresések beállítása</span></a>
+            <div class="sub-menu-block">
+                <div class="row">
+                    <div class="col-md-2 col-lg-2 col-sm-2">
+                        <h2 class="sub-menu-head"></h2>
+                        <ul class="sub-menu-lists">
+                            <li><a href="keres.php">Keresések beállítása</a></li>
+                            <!--<div class="color-hr"></div>-->
+                        </ul>
+                    </div>
+                    <!--<div class="col-md-2 col-lg-2 col-sm-2">
+                        <h2 class="sub-menu-head"></h2>
+
+                        <ul class="sub-menu-lists">
+                            <li><a href="kepek.php">Képek feltöltése</a></li>
+                        </ul>
+                    </div>
+                  <div class="col-md-2 col-lg-2 col-sm-2">
                         <h2 class="sub-menu-head"></h2>
 
                         <ul class="sub-menu-lists">
@@ -182,9 +301,72 @@ function Menu()
             </div>
         </li>
         <li class="top-level-link">
-            <a><span>Megrendelések<span></a>
+            <a class="mega-menu"><span>Keresések beállítása</span></a>
+            <div class="sub-menu-block">
+                <div class="row">
+                    <div class="col-md-2 col-lg-2 col-sm-2">
+                        <h2 class="sub-menu-head"></h2>
+                        <ul class="sub-menu-lists">
+                            <li><a href="keres.php">Keresések beállítása</a></li>
+                            <!--<div class="color-hr"></div>-->
+                        </ul>
+                    </div>
+                    <!--<div class="col-md-2 col-lg-2 col-sm-2">
+                        <h2 class="sub-menu-head"></h2>
+
+                        <ul class="sub-menu-lists">
+                            <li><a href="kepek.php">Képek feltöltése</a></li>
+                        </ul>
+                    </div>
+                  <div class="col-md-2 col-lg-2 col-sm-2">
+                        <h2 class="sub-menu-head"></h2>
+
+                        <ul class="sub-menu-lists">
+                            <li><a href=""></a></li>
+                            <div class="color-hr"></div>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-sm-2">
+                        <h2 class="sub-menu-head"></h2>
+
+                        <ul class="sub-menu-lists">
+                            <li><a href=""></a></li>
+                            <div class="color-hr"></div>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                            <li></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-sm-2">
+                        <h2 class="sub-menu-head"></h2>
+
+                        <ul class="sub-menu-lists">
+                            <li><a href=""></a></li>
+                            <div class="color-hr"></div>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-sm-2">
+                        <h2 class="sub-menu-head"></h2>
+                        <ul class="sub-menu-lists">
+                            <li><a href=""></a></li>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                            <li><a></a></li>
+                        </ul>
+                    </div>-->
+                </div>
+            </div>
         </li>
-        <li class="top-level-link">
+       <!-- <li class="top-level-link">
             <a><span>Kapacitások</span></a>
         </li>
         <li class="top-level-link">
@@ -193,7 +375,7 @@ function Menu()
                 <div class="row">
                     <div class="col-md-2 col-lg-2 col-sm-2">
                         <h2 class="sub-menu-head"></h2>
-                        <!--<div class="color-hr"></div>-->
+                        <div class="color-hr"></div>
                         <ul class="sub-menu-lists">
                             <li><a href="fuvarozas.php">Fuvarozás</a></li>
                             <div class="color-hr"></div>
@@ -205,7 +387,7 @@ function Menu()
                     </div>
                     <div class="col-md-2 col-lg-2 col-sm-2">
                         <h2 class="sub-menu-head"></h2>
-                    <!--<div class="color-hr"></div>-->
+                    <div class="color-hr"></div>
                         <ul class="sub-menu-lists">
                             <li><a href="raktar.php">Raktár</a></li>
                             <div class="color-hr"></div>
@@ -220,7 +402,7 @@ function Menu()
         </li>
         <li class="top-level-link">
             <a><span>Kimutatások</span></a>
-        </li>
+        </li>-->
         <li class="top-level-link">
             <a class="mega-menu"><span>Login</span></a>
             <div class="sub-menu-block">
@@ -230,11 +412,7 @@ function Menu()
                         <!--<div class="color-hr"></div>-->
                         <ul class="sub-menu-lists">
                             <li><a href="felhasznalok.php">Felhasználó</a></li>
-                            <div class="color-hr"></div>
-                            <li><a></a></li>
-                            <li><a></a></li>
-                            <li><a></a></li>
-                            <li></a></li>
+                            <!--<div class="color-hr"></div>-->
                         </ul>
                     </div>
 <!--             <div class="col-md-2 col-lg-2 col-sm-2">
@@ -265,11 +443,7 @@ function Menu()
                         <!--<div class="color-hr"></div>-->
                         <ul class="sub-menu-lists">
                             <li><a href="kilep.php">Kilép</a></li>
-                            <div class="color-hr"></div>
-                            <li><a></a></li>
-                            <li><a></a></li>
-                            <li><a></a></li>
-                            <li></a></li>
+                            <!--<div class="color-hr"></div>-->
                         </ul>
                     </div>
                 </div>

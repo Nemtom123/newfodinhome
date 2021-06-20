@@ -208,6 +208,7 @@ class OldalakPdo
             echo $e->getMessage();
         }
     }
+
     public function OldalFeltoltEnglish($oldalak_id,$oldalak_szoveg_en_1, $oldalak_szoveg_en_2,$oldalak_szoveg_en_3,$oldalak_szoveg_en_4,$oldalak_szoveg_en_5)
 
     {
@@ -251,6 +252,7 @@ class OldalakPdo
             echo $e->getMessage();
         }
     }
+
 
     public function oldalLeKerdez($banner_id)
     {

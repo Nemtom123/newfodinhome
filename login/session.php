@@ -1,11 +1,17 @@
 <?php
-
-session_start();
-
-require_once 'class.user.php';
-$session = new USER();
-
-if (!$session->is_loggedin()) {
-    $session->redirectlogin('../index.php');
+if(isset($_SESSION["user"]))
+{
+    if(time()-$_SESSION["login_time_stamp"] >600)
+    {
+        session_unset();
+        session_destroy();
+        header("Location:index.php");
+    }
 }
+else
+{
+   // header("Location:index.php");
+}
+?>
+
 

@@ -1,23 +1,31 @@
 <?php
 include_once 'head.php';
-include_once 'PDOSQL.php';
-$PDOSQL = new PDOSQL("MsSql");
-$PDOSQL->Kapcsolodas();
 
-$id = isset($_SESSION['id']) ? $_SESSION['id'] : NULL;
-$id = (int)$id;
-$b = (string)$_POST['TeljesNev'] ? $_POST['TeljesNev'] : 0;
-$i = (int)$_POST['Beosztas'] ? $_POST['Beosztas'] : 0;
-$parameteres = array();
-array_push($parameteres, array("variable" => "id", "value" => $id));
-array_push($parameteres, array("variable" => "TeljesNev", "value" => $b));
-array_push($parameteres, array("variable" => "BeosztasID", "value" => $i));
-$lekerdezes = "EXEC [dbo].[FelhasznalokFelvitele] :id, :TeljesNev, :BeosztasID";
+include_once 'class.user.php';
+$auth_user = new USER();
+if ($_POST['id'] == '') {
 
-$PDOSQL->Execute($lekerdezes, $parameteres);
-$PDOSQL->KapcsolatLezaras();
+    $b = (string)$_POST['user_name'] ? $_POST['user_name'] : 0;
+    $mail = (string)$_POST['user_email'] ? $_POST['user_email'] : 0;
+    // $i = password_hash((isset($_POST['user_pass'])) ? $_POST['user_pass'] : 0, PASSWORD_DEFAULT);
+    $i = (isset($_POST['user_pass'])) ? $_POST['user_pass'] : 0;
+    $auth_user->register($b,$mail, $i);
+    ob_start();
+    header("Location: felhasznalok.php?name=sikerult");
+    ob_end_flush();
+}
 
-ob_start();
-header("Location: felhasznalok.php?name=sikerult");
-ob_end_flush();
+if (isset($_POST['id']) != '') {
+    $id = (int)(isset($_POST['id'])) ? $_POST['id'] : NULL;
+    $b = (string)(isset($_POST['user_name'])) ? $_POST['user_name'] : 0;
+    $mail = (string)(isset($_POST['user_email'])) ? $_POST['user_email'] : 0;
+    //$i = password_hash((isset($_POST['user_pass'])) ? $_POST['user_pass'] : 0, PASSWORD_DEFAULT);
+    $i = (isset($_POST['user_pass'])) ? $_POST['user_pass'] : 0;
+    $auth_user->update($id,$b,$mail, $i);
+    ob_start();
+    header("Location: felhasznalok.php?name=sikerult");
+    ob_end_flush();
+}
+
+
 ?>

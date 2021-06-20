@@ -9,7 +9,7 @@ class PDOSQL  {
         $this->eredmeny = "";
         $this->SQl_Type = $SQl_Type;
         switch( $SQl_Type ){
-            case    'MySql' :   $this->kapcsolat = new PDO("mysql:host=;dbname=;charset=utf8","felhasznalonev","jelszo");
+            case    'MySql' :   $this->kapcsolat = new PDO("mysql:host=localhost;dbname=fodinhome;charset=utf8","Tomi","TOMcsika1969");
                 break;
             case    'MsSql' :   $this->kapcsolat = new PDO("sqlsrv:server=;Database=","","");
                 break;
@@ -29,11 +29,11 @@ class PDOSQL  {
         $this->kapcsolat->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
         $this->kapcsolat->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
         $this->kapcsolat->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $this->kapcsolat->setAttribute(PDO::SQLSRV_ATTR_DIRECT_QUERY, true);
+        //$this->kapcsolat->setAttribute(PDO::SQLSRV_ATTR_DIRECT_QUERY, true);
         $this->kapcsolat->setAttribute(PDO::ATTR_DEFAULT_STR_PARAM, PDO::PARAM_STR_NATL);
         //$this->kapcsolat->setAttribute(PDO::ATTR_EMULATE_PREPARES , true);
         //$this->kapcsolat->setAttribute(PDO::SQLSRV_ATTR_CURSOR_SCROLL_TYPE , PDO::SQLSRV_CURSOR_DYNAMIC);
-        $this->kapcsolat->setAttribute(PDO::SQLSRV_ATTR_QUERY_TIMEOUT , 1);
+       // $this->kapcsolat->setAttribute(PDO::SQLSRV_ATTR_QUERY_TIMEOUT , 1);
 
         if ( strcmp($this->SQl_Type,"MySql") === 0){
             $this->kapcsolat->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, TRUE);
@@ -173,9 +173,9 @@ class PDOSQL  {
 //**************************************************************************************
 
 
-//**************************************************************************************    
 //**************************************************************************************
-//**************************************************************************************          
+//**************************************************************************************
+//**************************************************************************************
 
 
 }//abstract class MySql implements SqlInterfesz
