@@ -1,6 +1,6 @@
 <?php
 include 'alOldal.php';
-
+include 'OldalakPdo.php';
 $value = (isset($_POST['btn-rogzit'])) ? $_POST['btn-rogzit'] : NULL;
 
 if ($value == 'rogzitEn') {
@@ -36,7 +36,6 @@ if ($value == 'rogzitEn') {
 }
 
 if ($value == 'rogzitMa') {
-    print_r($_POST);
     try {
 
         $tomb1 = $_POST['al_oldalak_id'];
@@ -64,5 +63,70 @@ if ($value == 'rogzitMa') {
     } catch (PDOException $e) {
         echo $e->getMessage();
     }
+}
+
+if ($value == 'rogzitIndexEn'){
+    try {
+
+        $tomb1 = $_POST['al_oldalak_id'];
+        $tomb2 = $_POST['oldalak_szoveg_en_1'];
+        $tomb3 = $_POST['oldalak_szoveg_en_2'];
+        $tomb4 = $_POST['oldalak_szoveg_en_3'];
+        $tomb5 = $_POST['oldalak_szoveg_en_4'];
+        $tomb6 = $_POST['oldalak_szoveg_en_5'];
+        $lekerdezes = new fodinhome\OldalakPdo();
+        $query = $lekerdezes->runQuery("SELECT * FROM oldalak WHERE oldalak_id = $tomb1 ");
+        $query->execute([]);
+        $lekertAdat = $query->fetch(PDO::FETCH_ASSOC);
+        if (isset($lekertAdat['oldalak_id']) == isset($tomb1)) {
+            $lekerdezes->OldalUpDateEnglish($tomb1, $tomb2, $tomb3, $tomb4, $tomb5, $tomb6);
+            ob_start();
+            header("Location: oldalak.php?message=sikerult");
+            ob_end_flush();
+            die();
+        } else {
+            $lekerdezes->OldalFeltoltEnglish($tomb1, $tomb2, $tomb3, $tomb4, $tomb5, $tomb6);
+            ob_start();
+            header("Location: oldalak.php?message=sikerult");
+            ob_end_flush();
+            die();
+        }
+
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+
+}
+
+if ($value == 'rogzitIndexMa'){
+    try {
+        $tomb1 = $_POST['al_oldalak_id'];
+        $tomb2 = $_POST['oldalak_szoveg_1'];
+        $tomb3 = $_POST['oldalak_szoveg_2'];
+        $tomb4 = $_POST['oldalak_szoveg_3'];
+        $tomb5 = $_POST['oldalak_szoveg_4'];
+        $tomb6 = $_POST['oldalak_szoveg_5'];
+        $lekerdezes = new fodinhome\OldalakPdo();
+        $query = $lekerdezes->runQuery("SELECT * FROM oldalak WHERE oldalak_id = $tomb1 ");
+        $query->execute([]);
+        $lekertAdat = $query->fetch(PDO::FETCH_ASSOC);
+        if (isset($lekertAdat['oldalak_id']) == isset($tomb1)) {
+            $lekerdezes->OldalUpDateMagyar($tomb1, $tomb2, $tomb3, $tomb4, $tomb5, $tomb6);
+            ob_start();
+            header("Location: oldalak.php?message=sikerult");
+            ob_end_flush();
+            die();
+        } else {
+            $lekerdezes->OldalFeltoltMagyar($tomb1, $tomb2, $tomb3, $tomb4, $tomb5, $tomb6);
+            ob_start();
+            header("Location: oldalak.php?message=sikerult");
+            ob_end_flush();
+            die();
+        }
+
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+
 }
 ?>

@@ -230,17 +230,30 @@ class OldalakPdo
     }
 
 
-    public function OldalUpDate($oldalak_id,$oldalak_szoveg_1, $oldalak_szoveg_2, $oldalak_szoveg_3, $oldalak_szoveg_4, $oldalak_szoveg_5,$oldalak_szoveg_en_1, $oldalak_szoveg_en_2,$oldalak_szoveg_en_3,$oldalak_szoveg_en_4,$oldalak_szoveg_en_5)
+    public function OldalUpDateMagyar($oldalak_id,$oldalak_szoveg_1, $oldalak_szoveg_2, $oldalak_szoveg_3, $oldalak_szoveg_4, $oldalak_szoveg_5)
     {
 
         try {
-            $banner = $this->kapcsolodik->prepare("UPDATE oldalak  SET oldalak_szoveg_1=:oldalak_szoveg_1,oldalak_szoveg_2=:oldalak_szoveg_2,oldalak_szoveg_3=:oldalak_szoveg_3,oldalak_szoveg_4=:oldalak_szoveg_4,oldalak_szoveg_5=:oldalak_szoveg_5, oldalak_szoveg_en_1=:oldalak_szoveg_en_1, oldalak_szoveg_en_2=:oldalak_szoveg_en_2, oldalak_szoveg_en_3=:oldalak_szoveg_en_3, oldalak_szoveg_en_4=:oldalak_szoveg_en_4, oldalak_szoveg_en_5=:oldalak_szoveg_en_5 WHERE  oldalak_id = :oldalak_id");
+            $banner = $this->kapcsolodik->prepare("UPDATE oldalak  SET oldalak_szoveg_1= :oldalak_szoveg_1,oldalak_szoveg_2= :oldalak_szoveg_2,oldalak_szoveg_3= :oldalak_szoveg_3,oldalak_szoveg_4= :oldalak_szoveg_4,oldalak_szoveg_5= :oldalak_szoveg_5 WHERE  oldalak_id= :oldalak_id");
             $banner->bindParam(":oldalak_id", $oldalak_id, PDO::PARAM_STR);
             $banner->bindParam(":oldalak_szoveg_1", $oldalak_szoveg_1, PDO::PARAM_STR);
             $banner->bindParam(":oldalak_szoveg_2", $oldalak_szoveg_2, PDO::PARAM_STR);
             $banner->bindParam(":oldalak_szoveg_3", $oldalak_szoveg_3, PDO::PARAM_STR);
             $banner->bindParam(":oldalak_szoveg_4", $oldalak_szoveg_4, PDO::PARAM_STR);
             $banner->bindParam(":oldalak_szoveg_5", $oldalak_szoveg_5, PDO::PARAM_STR);
+            $banner->execute();
+            return $banner;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    public function OldalUpDateEnglish($oldalak_id,$oldalak_szoveg_en_1, $oldalak_szoveg_en_2,$oldalak_szoveg_en_3,$oldalak_szoveg_en_4,$oldalak_szoveg_en_5)
+    {
+
+        try {
+            $banner = $this->kapcsolodik->prepare("UPDATE oldalak  SET oldalak_szoveg_en_1= :oldalak_szoveg_en_1, oldalak_szoveg_en_2= :oldalak_szoveg_en_2, oldalak_szoveg_en_3= :oldalak_szoveg_en_3, oldalak_szoveg_en_4= :oldalak_szoveg_en_4, oldalak_szoveg_en_5= :oldalak_szoveg_en_5 WHERE  oldalak_id= :oldalak_id");
+            $banner->bindParam(":oldalak_id", $oldalak_id, PDO::PARAM_STR);
             $banner->bindParam(":oldalak_szoveg_en_1", $oldalak_szoveg_en_1, PDO::PARAM_STR);
             $banner->bindParam(":oldalak_szoveg_en_2", $oldalak_szoveg_en_2, PDO::PARAM_STR);
             $banner->bindParam(":oldalak_szoveg_en_3", $oldalak_szoveg_en_3, PDO::PARAM_STR);

@@ -1,6 +1,4 @@
-<?php include_once 'head.php';
-//Head();
-?>
+<?php include_once 'head.php'; ?>
 <link href="bootstrap-4.5.2/dist/css/bootstrap.css" rel="stylesheet"/>
 <link href="bootstrap-4.5.2/dist/css/bootstrap-grid.min.css" rel="stylesheet"/>
 <link href="bootstrap-4.5.2/dist/css/main.css" rel="stylesheet"/>
@@ -14,7 +12,6 @@
 Menu();
 echo '<hr>';
 ob_start();
-
 ?>
 <body>
 <div class="container">
@@ -34,7 +31,7 @@ ob_start();
                     include 'indexOldalSzerkesztes.php';   ?>
                     <br>
                     <br>
-                    <button class="btn btn-success pull-left" id="btn-rogzit" name="btn-rogzit" value="rogzit"
+                    <button class="btn btn-success pull-left" id="btn-rogzit" name="btn-rogzit" value="rogzitIndexMa"
                             type="submit" onclick="myfunction">Rögzít
                     </button>
                     <button class="btn btn-info pull-right" id="btn-rogzit" name="btn-rogzit" value="vissza"
@@ -53,7 +50,6 @@ ob_start();
                     <button class="btn btn-success pull-left" id="btn-rogzit" name="btn-rogzit" value="rogzitMa"
                             type="submit" onclick="myfunction">Rögzít
                     </button>
-
                     <button class="btn btn-info pull-right" id="btn-rogzit" name="btn-rogzit" value="vissza"
                             type="submit" onclick="myfunction"><a href="oldalak.php" style="color: white"> Vissza </a>
                     </button>
@@ -65,6 +61,20 @@ ob_start();
                     include 'navMenuSzerkesztes.php';
                 }
                 ?>
+
+                 <?php
+                 if ($replay == 3){
+                    include 'kontakt.php';
+                }
+                ?>
+
+                <?php
+                if ($replay == 1){
+                    include 'footer.php';
+                }
+                ?>
+
         </div>
     </div>
 </div>
+

@@ -64,7 +64,7 @@ ob_start();
                     if (isset($_POST['jav'])) {
                         foreach ($_POST as $value) {
                             try { ?>
-                                <form method="post" action="menedzseles.php" class="signin-form" id="wood">
+                                <form method="post" action="keres.php" class="signin-form" id="wood">
                                     <br><br>
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="metaleiras"
@@ -74,16 +74,46 @@ ob_start();
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="metaoldal"
                                                placeholder="description"
-                                               value="<?php echo $_POST['jav']; ?>" disabled>
+                                               value="<?php
+                                               foreach ($_POST as $value) {
+                                                   $str2 = substr($value, 4). "\n";
+                                                   echo  $str3 = substr_replace($str2, "", 7) . "\n";
+                                               }
+                                               ?>" disabled>
                                     </div>
                                     <div class="form-group">
-                                        <input type="hidden" class="form-control" name="metaoldal"
+                                        <input type="hidden" class="form-control" name="meta_id"
                                                placeholder="description"
-                                               value="<?php echo $_POST['jav']; ?>">
+                                               value="<?php
+                                               foreach ($_POST as $value) {
+                                                   $str2 = substr($value, 0). "\n";
+                                                   echo  $str3 = substr_replace($str2, "", 1) . "\n";
+                                               }
+                                               ?>">
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="metaleiras2"
                                                placeholder="keywords"
+                                               value="" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="banner"
+                                               placeholder="banner"
+                                               value="" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="h1"
+                                               placeholder="H1"
+                                               value="" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="banner2"
+                                               placeholder="banner2"
+                                               value="" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="banner3"
+                                               placeholder="banner3"
                                                value="" required>
                                     </div>
                                     <div class="clearfix"></div>
@@ -107,25 +137,40 @@ ob_start();
 
                     ?>
                     <?php
+
+                    foreach ($_POST as $value) {
+                        $str2 = substr($value, 0);
+                        $str3 = substr_replace($str2, "", 1) . "\n";
+                    }
                     if (isset($_POST['btn-signup'])) {
-                        $bedob = new vip\MetaClass();
-                        try{
-                            foreach ($_POST as $value){
-                                $tomb1 = $_POST['metaleiras'];
-                                $tomb2 = $_POST['metaleiras2'];
-                                $tomb3 = $_POST['metaoldal'];
-                                $tomb4 = $_POST['banner'];
-                                $tomb5 = $_POST['h1'];
-                                $tomb6 = $_POST['banner2'];
-                                $tomb7 = $_POST['banner3'];
-                                $bedob->UpdateMeta($tomb1,$tomb2,$tomb3,$tomb4,$tomb5,$tomb6,$tomb7);
+                        include 'MetaClass.php';
+                        $bedob = new \fodinhome\MetaClass();
+                        $beker = $bedob->runQuery("SELECT * FROM meta WHERE meta_id = ".$str3." ");
+                        $beker->execute([]);
+                        $kertadat = $beker->fetch(PDO::FETCH_ASSOC);
+                        $adat = (isset($kertadat['meta_id'])) ? $kertadat['meta_id'] : NULL;
+                        $adat2 = (isset($_POST['meta_id'])) ? $_POST['meta_id'] : NULL;
+                        if ((isset($adat)) == (isset($adat2))){
+                            try{
+                                foreach ($_POST as $value){
+
+                                    $tomb1 = $_POST['metaleiras'];
+                                    $tomb2 = $_POST['metaleiras2'];
+                                    $tomb3 = $_POST['meta_id'];
+                                    $tomb4 = $_POST['banner'];
+                                    $tomb5 = $_POST['h1'];
+                                    $tomb6 = $_POST['banner2'];
+                                    $tomb7 = $_POST['banner3'];
+                                    $bedob->UpdateMeta($tomb1,$tomb2,$tomb3,$tomb4,$tomb5,$tomb6,$tomb7);
+                                }
+
+
+                            } catch (PDOException $e){
+                                echo $e->getMessage();
                             }
-
-
-                        } catch (PDOException $e){
-                            echo $e->getMessage();
+                            $bedob->redirect('menedzseles.php');
                         }
-                        $bedob->redirect('menedzseles.php');
+
                     }?>
                     <section class="ftco-section">
                         <div class="container">
@@ -152,14 +197,8 @@ ob_start();
                             <script src="assets/js/core/popper.min.js"></script>
                             <script src="assets/js/core/bootstrap.min.js"></script>
                             <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-                            <!--  Google Maps Plugin    -->
-                            <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-                            <!-- Chart JS -->
                             <script src="assets/js/plugins/chartjs.min.js"></script>
-                            <!--  Notifications Plugin    -->
                             <script src="assets/js/plugins/bootstrap-notify.js"></script>
-                            <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
                             <script src="assets/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
-                            <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
                             <script src="assets/demo/demo.js"></script>
 

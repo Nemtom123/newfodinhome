@@ -3,6 +3,7 @@
 
 namespace fodinhome;
 
+
 use Database;
 use PDO;
 use PDOException;
@@ -31,7 +32,7 @@ class MetaClass
     {
         try {
             $metabeszur = $this->levelezes->prepare("INSERT INTO meta (metaleiras, metaleiras2, banner, h1, banner2, banner3)
-            VALUES(:metaleiras,:metaleiras2,:banner,:h1)");
+            VALUES(:metaleiras,:metaleiras2,:banner,:h1, :banner2, :banner3)");
             $metabeszur->bindparam(":metaleiras", $metaleiras, PDO::PARAM_STR);
             $metabeszur->bindparam(":metaleiras2", $metaleiras2, PDO::PARAM_STR);
             $metabeszur->bindparam(":banner", $banner, PDO::PARAM_STR);

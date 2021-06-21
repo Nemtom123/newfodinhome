@@ -1,34 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3c75f57-74d4-4e20-8ae9-2330f2bb2a59" name="Default" comment="newfodinhome /2021.06.18 05:55">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login/MetaClass.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login/alOldal.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login/keres.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login/oldalak_rogzit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/newfodinhome.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/newfodinhome.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="f3c75f57-74d4-4e20-8ae9-2330f2bb2a59" name="Default" comment="newfodinhome /2021.06.21">
+      <change afterPath="$PROJECT_DIR$/login/footer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/indexOldalakSzerkesztesEn.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/kontakt.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/MetaClass.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/MetaClass.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login/OldalakPdo.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/OldalakPdo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/PDOSQL.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/PDOSQL.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/ajax/felhasznalok.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/ajax/felhasznalok.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/bootstrap-4.5.2/dist/css/polilakk.css" beforeDir="false" afterPath="$PROJECT_DIR$/login/bootstrap-4.5.2/dist/css/fodinhome.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/class.user.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/class.user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/dbconfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/dbconfig.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/felhasznalo-jav-form.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/felhasznalojavitas.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/felhasznalok.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/felhasznalok.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/felhasznalok_javitas.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/felhasznalok_javitas.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/felhasznalok_mentes.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/felhasznalok_mentes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/felhasznalok_torles.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/felhasznalok_torles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/head.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/oldalak.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/oldalak.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/oldalakSzerkesztes.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/oldalakSzerkesztes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/oldalakSzerkesztesEn.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/oldalakSzerkesztesEn.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/indexOldalSzerkesztes.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/indexOldalSzerkesztes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/keres.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/keres.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login/oldalak_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/oldalak_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/oldalak_rogzit.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/oldalak_rogzit.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,7 +253,8 @@
       <workItem from="1623945098182" duration="8977000" />
       <workItem from="1623989457250" duration="309000" />
       <workItem from="1623989785618" duration="340000" />
-      <workItem from="1624078530141" duration="72438000" />
+      <workItem from="1624078530141" duration="72679000" />
+      <workItem from="1624286411877" duration="13917000" />
     </task>
     <task id="LOCAL-00001" summary="newfodinhome /2021.04.14 13:58">
       <created>1618401688905</created>
@@ -328,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623990050472</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="newfodinhome /2021.06.21">
+      <created>1624227482062</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1624227482062</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -439,7 +430,8 @@
     <MESSAGE value="newfodinhome /2021.05.17 11:35" />
     <MESSAGE value="newfodinhome /2021.06.12 11:55" />
     <MESSAGE value="newfodinhome /2021.06.18 05:55" />
-    <option name="LAST_COMMIT_MESSAGE" value="newfodinhome /2021.06.18 05:55" />
+    <MESSAGE value="newfodinhome /2021.06.21" />
+    <option name="LAST_COMMIT_MESSAGE" value="newfodinhome /2021.06.21" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

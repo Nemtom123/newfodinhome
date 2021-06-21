@@ -8,29 +8,12 @@
 ?>
 <div class="card spur-card">
     <div class="fodinhome1-card-header">
-        <?php foreach ($_POST as $value) {
-            echo $str2 = substr($value, 4);
-            $str3 = substr_replace($str2, "", -4) . "\n";
-        } ?> szerkesztése
-        szerkesztése
-        <button name="ujfelvitel" type="submit" name="id" value="<?php $str3 ?>"
-                class="btn btn-outline-success pull-right" data-toggle="modal" id="btn">
-            <span>
-                <a href="indexOldalakSzerkesztesEn.php?<?php foreach ($_POST as $value) {
-                    $str2 = substr($value, 0);
-                    $str3 = substr_replace($str2, "", -1) . "\n";
-                    echo $str3;
-                } ?>">  Angol  </a>
-            </span>
-        </button>
+        <?php foreach ($_POST as $value) { echo $str2  = substr($value, 4); $str3 = substr_replace($str2, "", -4) . "\n"; } ?> szerkesztése
     </div>
-    <span><i class="fas fa-arrow-alt-circle-right"></i></span>
+    <span><i class="fas fa-arrow-alt-circle-right" ></i></span>
     <textarea id="editor1" name="oldalak_szoveg_1" title="">
                     <?php
-                    foreach ($_POST as $value) {
-                        $str2 = substr($value, 0);
-                        $str3 = substr_replace($str2, "", 1) . "\n";
-                    }
+                    foreach ($_POST as $value) {  $str2  = substr($value, 0);  $str3 = substr_replace($str2, "", 1) . "\n"; }
                     include_once 'OldalakPdo.php';
                     $leker = new namespace\fodinhome\OldalakPdo();
                     $beker = $leker->runQuery("SELECT * FROM oldalak WHERE oldalak_id = $str3 ");
@@ -58,12 +41,9 @@
         <div class="col-md-4">
             <div class="card spur-card">
                 <div class="fodinhome1-card-header">
-                    <?php foreach ($_POST as $value) {
-                        echo $str2 = substr($value, 4);
-                        $str3 = substr_replace($str2, "", -4) . "\n";
-                    } ?> szerkesztése
+                    <?php foreach ($_POST as $value) { echo $str2  = substr($value, 4); $str3 = substr_replace($str2, "", -4) . "\n"; } ?> szerkesztése
                 </div>
-                <span><i class="fas fa-arrow-alt-circle-right"></i></span>
+                <span><i class="fas fa-arrow-alt-circle-right" ></i></span>
                 <textarea id="editor2" name="oldalak_szoveg_2" title="">
                     <?php
                     $adat = (isset($kertadat['oldalak_szoveg_2'])) ? $kertadat['oldalak_szoveg_2'] : NULL;
@@ -85,12 +65,9 @@
         <div class="col-md-4">
             <div class="card spur-card">
                 <div class="fodinhome1-card-header">
-                    <?php foreach ($_POST as $value) {
-                        echo $str2 = substr($value, 4);
-                        $str3 = substr_replace($str2, "", -4) . "\n";
-                    } ?> szerkesztése
+                    <?php foreach ($_POST as $value) { echo $str2  = substr($value, 4); $str3 = substr_replace($str2, "", -4) . "\n"; } ?> szerkesztése
                 </div>
-                <span><i class="fas fa-arrow-alt-circle-right"></i></span>
+                <span><i class="fas fa-arrow-alt-circle-right" ></i></span>
                 <textarea id="editor3" name="oldalak_szoveg_3" title="">
                   <?php
                   $adat = (isset($kertadat['oldalak_szoveg_3'])) ? $kertadat['oldalak_szoveg_3'] : NULL;
@@ -112,12 +89,9 @@
         <div class="col-md-4">
             <div class="card spur-card">
                 <div class="fodinhome1-card-header">
-                    <?php foreach ($_POST as $value) {
-                        echo $str2 = substr($value, 4);
-                        $str3 = substr_replace($str2, "", -4) . "\n";
-                    } ?> szerkesztése
+                    <?php foreach ($_POST as $value) { echo $str2  = substr($value, 4); $str3 = substr_replace($str2, "", -4) . "\n"; } ?> szerkesztése
                 </div>
-                <span><i class="fas fa-arrow-alt-circle-right"></i></span>
+                <span><i class="fas fa-arrow-alt-circle-right" ></i></span>
                 <textarea id="editor4" name="oldalak_szoveg_4" title="">
                     <?php
                     $adat = (isset($kertadat['oldalak_szoveg_4'])) ? $kertadat['oldalak_szoveg_4'] : NULL;
@@ -142,12 +116,9 @@
 <br>
 <div class="card spur-card">
     <div class="fodinhome1-card-header">
-        <?php foreach ($_POST as $value) {
-            echo $str2 = substr($value, 4);
-            $str3 = substr_replace($str2, "", -4) . "\n";
-        } ?> szerkesztése
+        <?php foreach ($_POST as $value) { echo $str2  = substr($value, 4); $str3 = substr_replace($str2, "", -4) . "\n"; } ?> szerkesztése
     </div>
-    <span><i class="fas fa-arrow-alt-circle-right"></i></span>
+    <span><i class="fas fa-arrow-alt-circle-right" ></i></span>
     <textarea id="editor5" name="oldalak_szoveg_5" title="">
                     <?php
                     $adat = (isset($kertadat['oldalak_szoveg_5'])) ? $kertadat['oldalak_szoveg_5'] : NULL;
@@ -165,9 +136,3 @@
             });
     </script>
 </div>
-<input type="hidden" name="al_oldalak_id" value="<?php
-foreach ($_POST as $value) {
-    $str2 = substr($value, 0);
-    echo  $str3 = substr_replace($str2, "", 1) . "\n";
-}
-?>" >
