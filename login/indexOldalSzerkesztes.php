@@ -29,11 +29,12 @@
                     <?php
                     foreach ($_POST as $value) {
                         $str2 = substr($value, 0);
-                        $str3 = substr_replace($str2, "", 1) . "\n";
+                        $str3 = substr_replace($str2, "", 2) . "\n";
+                        $data = str_replace(".", "", $str3, $i);
                     }
                     include_once 'OldalakPdo.php';
                     $leker = new namespace\fodinhome\OldalakPdo();
-                    $beker = $leker->runQuery("SELECT * FROM oldalak WHERE oldalak_id = $str3 ");
+                    $beker = $leker->runQuery("SELECT * FROM oldalak WHERE oldalak_id = $data ");
                     $beker->execute([]);
                     $kertadat = $beker->fetch(PDO::FETCH_ASSOC);
                     $adat = (isset($kertadat['oldalak_szoveg_1'])) ? $kertadat['oldalak_szoveg_1'] : NULL;
@@ -168,6 +169,7 @@
 <input type="hidden" name="al_oldalak_id" value="<?php
 foreach ($_POST as $value) {
     $str2 = substr($value, 0);
-    echo  $str3 = substr_replace($str2, "", 1) . "\n";
+    $str3 = substr_replace($str2, "", 2) . "\n";
+    echo $data = str_replace(".", "", $str3, $i);
 }
-?>" >
+?>">

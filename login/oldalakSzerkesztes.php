@@ -27,7 +27,7 @@ if(empty($GetMessage)) {
     <input type="hidden" name="al_oldalak_id" value="<?php
     foreach ($_POST as $value) {
         $str2 = substr($value, 0);
-        echo $str3 = substr_replace($str2, "", 1) . "\n";
+      echo  $str3 = substr_replace($str2, "", 2) . "\n";
     }
     ?>">
     <span><i class="fas fa-arrow-alt-circle-right"></i></span>

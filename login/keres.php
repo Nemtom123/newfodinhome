@@ -168,7 +168,7 @@ ob_start();
                             } catch (PDOException $e){
                                 echo $e->getMessage();
                             }
-                            $bedob->redirect('menedzseles.php');
+                            $bedob->redirect('keres.php');
                         }
 
                     }?>

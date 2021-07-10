@@ -42,11 +42,13 @@ ob_start();
                    <?php
                    foreach ($_GET as $value => $key) {
                        $str2 = substr($value, 0);
-                       $str3 = substr_replace($str2, "", 1) . "\n";
+                       $str3 = substr_replace($str2, "", 2) . "\n";
                    }
                    include_once 'OldalakPdo.php';
                    $leker = new namespace\fodinhome\OldalakPdo();
-                   $data = (isset($str3)) ? $str3 : NULL;
+                   $data_egy = (isset($str3)) ? $str3 : NULL;
+                   $data = str_replace("_", "", $data_egy, $i);
+
                    $beker = $leker->runQuery("SELECT * FROM oldalak WHERE oldalak_id =  ".$data." ");
                    $beker->execute([]);
                    $kertadat = $beker->fetch(PDO::FETCH_ASSOC);
@@ -180,7 +182,9 @@ ob_start();
                 <input type="hidden" name="al_oldalak_id" value="<?php
                 foreach ($_GET as $value => $key) {
                     $str2 = substr($value, 0);
-                    echo  $str3 = substr_replace($str2, "", 1) . "\n";
+                    $str3 = substr_replace($str2, "", 2) . "\n";
+                    echo $data = str_replace(".", "", $str3, $i);
+
                 }
                 ?>" >
                 <br>

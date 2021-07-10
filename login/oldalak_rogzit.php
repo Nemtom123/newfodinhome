@@ -100,13 +100,14 @@ if ($value == 'rogzitIndexEn'){
 
 if ($value == 'rogzitIndexMa'){
     try {
-        $tomb1 = $_POST['al_oldalak_id'];
+       echo $tomb1 = $_POST['al_oldalak_id'];
         $tomb2 = $_POST['oldalak_szoveg_1'];
         $tomb3 = $_POST['oldalak_szoveg_2'];
         $tomb4 = $_POST['oldalak_szoveg_3'];
         $tomb5 = $_POST['oldalak_szoveg_4'];
         $tomb6 = $_POST['oldalak_szoveg_5'];
         $lekerdezes = new fodinhome\OldalakPdo();
+
         $query = $lekerdezes->runQuery("SELECT * FROM oldalak WHERE oldalak_id = $tomb1 ");
         $query->execute([]);
         $lekertAdat = $query->fetch(PDO::FETCH_ASSOC);

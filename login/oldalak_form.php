@@ -26,8 +26,8 @@ ob_start();
                 <br>
                 <?php
               $replay  =   (isset($_POST['replay'])) ? $_POST['replay'] : null;
-                if ($replay == 2 OR $replay == 4 OR $replay == 19 OR $replay == 38 OR $replay == 8
-                    OR $replay == 14 OR $replay == 19){
+                if ($replay == 2 OR $replay == 4 OR $replay == 38 OR $replay == 8
+                    OR $replay == 14 OR $replay == 19 OR $replay == 34){
                     include 'indexOldalSzerkesztes.php';   ?>
                     <br>
                     <br>
@@ -43,7 +43,7 @@ ob_start();
                 if ($replay == 15 OR $replay == 26 OR $replay == 33 OR $replay == 35 OR $replay == 36
                     OR $replay == 37 OR $replay == 5 OR $replay == 6 OR $replay == 7 OR $replay == 10
                     OR $replay == 11 OR $replay == 12 OR $replay == 16 OR $replay == 17 OR $replay == 18
-                    OR $replay == 20 OR $replay == 21 OR $replay == 22) {
+                    OR $replay == 20 OR $replay == 21 OR $replay == 22 OR $replay == 31) {
                     include 'oldalakSzerkesztes.php'; ?>
                     <br>
                     <br>
@@ -59,6 +59,18 @@ ob_start();
                 <?php
                 if ($replay == 0){
                     include 'navMenuSzerkesztes.php';
+                }
+                ?>
+
+                 <?php
+                 if ($replay == 9){
+                    include 'nemSzerkesztheto.php';
+                }
+                ?>
+
+                <?php
+                if ($replay == 23 OR $replay == 24 OR $replay == 25 OR $replay == 27 OR $replay == 28 OR $replay == 29 OR $replay == 30 OR $replay == 31 OR $replay == 32  ){
+                    include 'nemSzerkesztheto.php';
                 }
                 ?>
 

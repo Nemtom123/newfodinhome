@@ -24,8 +24,9 @@ ob_start();
                 <div class="">
                     <div class="fodinhome-card-header">
                         Admin felület / oldalak szerkesztése / <?php foreach ($_GET as $value => $key) {
-                            $str2 = substr($value, 4);
-                            echo  $str3 = substr_replace($str2, "", 7) . "\n";
+                            $str2 = substr($value, 2);
+                            $str3 = substr_replace($str2, " ", 9) . "\n";
+                         echo   $data = str_replace("_","",$str3,$i);
                         } ?> / angolul
 
                     </div>
@@ -35,14 +36,16 @@ ob_start();
                 <div class="card spur-card">
                     <div class="fodinhome1-card-header">
                         <?php foreach ($_GET as $value => $key) {
-                            $str2 = substr($value, 4);
-                          echo  $str3 = substr_replace($str2, "", 7) . "\n";
+                            $str2 = substr($value, 2);
+                            $str3 = substr_replace($str2, " ", 9) . "\n";
+                            echo   $data = str_replace("_","",$str3,$i);
                         } ?> szerkesztése angolul
                     </div>
                     <input type="hidden" name="al_oldalak_id" value="<?php
                     foreach ($_GET as $value => $key) {
                         $str2 = substr($value, 0);
-                        echo  $str3 = substr_replace($str2, "", 1) . "\n";
+                        $str3 = substr_replace($str2, "", 2) . "\n";
+                     echo   $data = str_replace("_","",$str3,$i);
                     }
                     ?>" >
                     <span><i class="fas fa-arrow-alt-circle-right"></i></span>
@@ -51,11 +54,12 @@ ob_start();
                     <?php
                     foreach ($_GET as $value => $key) {
                         $str2 = substr($value, 0);
-                        $str3 = substr_replace($str2, "", 1) . "\n";
+                        $str3 = substr_replace($str2, "", 2) . "\n";
                     }
                     include_once 'alOldal.php';
                     $leker = new namespace\fodinhome\alOldal();
-                    $data = (isset($str3)) ? $str3 : NULL;
+                    $data_egy = (isset($str3)) ? $str3 : NULL;
+                    $data = str_replace("_","",$data_egy,$i);
                     $beker = $leker->runQuery("SELECT * FROM aloldalak WHERE al_oldalak_id =  ".$data." ");
                     $beker->execute([]);
                     $kertadat = $beker->fetch(PDO::FETCH_ASSOC);
@@ -79,8 +83,9 @@ ob_start();
                 <div class="card spur-card">
                     <div class="fodinhome1-card-header">
                         <?php foreach ($_GET as $value => $key) {
-                            $str2 = substr($value, 4);
-                            echo  $str3 = substr_replace($str2, "", 7) . "\n";
+                            $str2 = substr($value, 2);
+                            $str3 = substr_replace($str2, " ", 9) . "\n";
+                            echo   $data = str_replace("_","",$str3,$i);
                         } ?> szerkesztése angolul
                     </div>
                     <span><i class="fas fa-arrow-alt-circle-right"></i></span>
