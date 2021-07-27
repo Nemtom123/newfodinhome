@@ -1,11 +1,106 @@
+<?php
+$nyelv = isset($_GET['nyelv']) ? $_GET['nyelv'] : NULL;
+$nyelv = htmlentities($nyelv);
+
+function Meta1($nyelv)
+{
+  include_once 'login/dbconfig.php';
+  include_once 'login/MetaClass.php';
+  $leker = new fodinhome\MetaClass();
+  $beker = $leker->runQuery("SELECT * FROM meta WHERE meta_id = 1");
+  $beker->execute([]);
+  $bannerszoveg = $beker->fetch(PDO::FETCH_ASSOC);
+  echo $bannerszoveg['metaleiras' . $nyelv] ?? 'Üresen hagytad';
+}
+
+function Meta2($nyelv)
+{
+  include_once 'login/dbconfig.php';
+  include_once 'login/MetaClass.php';
+  $leker = new fodinhome\MetaClass();
+  $beker = $leker->runQuery("SELECT * FROM meta WHERE meta_id = 1");
+  $beker->execute([]);
+  $bannerszoveg = $beker->fetch(PDO::FETCH_ASSOC);
+  echo $bannerszoveg['metaleiras2' . $nyelv] ?? 'Üresen hagytad';
+}
+
+function Meta3($nyelv)
+{
+  include_once 'login/dbconfig.php';
+  include_once 'login/MetaClass.php';
+  $leker = new fodinhome\MetaClass();
+  $beker = $leker->runQuery("SELECT * FROM meta WHERE meta_id = 1");
+  $beker->execute([]);
+  $bannerszoveg = $beker->fetch(PDO::FETCH_ASSOC);
+  echo $bannerszoveg['banner' . $nyelv] ?? 'Üresen hagytad';
+}
+
+function Meta4($nyelv)
+{
+  include_once 'login/dbconfig.php';
+  include_once 'login/MetaClass.php';
+  $leker = new fodinhome\MetaClass();
+  $beker = $leker->runQuery("SELECT * FROM meta WHERE meta_id = 1");
+  $beker->execute([]);
+  $bannerszoveg = $beker->fetch(PDO::FETCH_ASSOC);
+  echo $bannerszoveg['banner2' . $nyelv] ?? 'Üresen hagytad';
+}
+
+
+function Meta5($nyelv)
+{
+  include_once 'login/dbconfig.php';
+  include_once 'login/MetaClass.php';
+  $leker = new fodinhome\MetaClass();
+  $beker = $leker->runQuery("SELECT * FROM meta WHERE meta_id = 1");
+  $beker->execute([]);
+  $bannerszoveg = $beker->fetch(PDO::FETCH_ASSOC);
+  echo $bannerszoveg['banner3' . $nyelv] ?? 'Üresen hagytad';
+}
+
+function Meta6($nyelv)
+{
+  include_once 'login/dbconfig.php';
+  include_once 'login/MetaClass.php';
+  $leker = new fodinhome\MetaClass();
+  $beker = $leker->runQuery("SELECT * FROM meta WHERE meta_id = 1");
+  $beker->execute([]);
+  $bannerszoveg = $beker->fetch(PDO::FETCH_ASSOC);
+  echo $bannerszoveg['h1' . $nyelv] ?? 'Üresen hagytad';
+}
+
+function index1($nyelv)
+{
+  include_once 'login/dbconfig.php';
+  include_once 'login/OldalakPdo.php';
+  $leker = new fodinhome\OldalakPdo();
+  $beker = $leker->runQuery("SELECT * FROM aloldalak WHERE al_oldalak_id = 15");
+  $beker->execute([]);
+  $bannerszoveg = $beker->fetch(PDO::FETCH_ASSOC);
+  echo $bannerszoveg['oldalak_szoveg_1' . $nyelv] ?? 'Üresen hagytad';
+}
+
+function index2($nyelv)
+{
+  include_once 'login/dbconfig.php';
+  include_once 'login/OldalakPdo.php';
+  $leker = new fodinhome\OldalakPdo();
+  $beker = $leker->runQuery("SELECT * FROM aloldalak WHERE al_oldalak_id = 15");
+  $beker->execute([]);
+  $bannerszoveg = $beker->fetch(PDO::FETCH_ASSOC);
+  echo $bannerszoveg['oldalak_szoveg_2' . $nyelv] ?? 'Üresen hagytad';
+}
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
+<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>New Fodin-Home KFT</title>
-    <meta name="description" content="Építkezés, Felújítás">
-    <meta name="keywords" content="Építkezés, Felújítás">
+    <meta name="description" content="<?php Meta1($nyelv) ?>">
+    <meta name="keywords" content="<?php Meta2($nyelv) ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="menu.css">
     <link rel="stylesheet" href="header.css">
@@ -13,6 +108,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <script src="bootstrap-4.5.3-dist/js/bootstrap.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
          .parallax1 {
         background-image: url(images/10.jpg);
@@ -23,6 +119,26 @@
         background-size: cover;
     }
     </style>
+    <style>
+       #btnScrollToTopp {
+                position: fixed;
+                right: 10px;
+                bottom: 10px;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: #ff9900;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+                border: none;
+                color: #FFFFFF;
+                outline: none;
+                cursor: pointer;
+                z-index:1;
+        }
+        #btnScrollToTopp:active {
+            background: #e68a00;
+        }
+    </style>
 </head>
 <body style="background-color:#f7f4f4;">
 
@@ -30,6 +146,12 @@
 include_once 'NavMenu.php';
 ?>
 <br>
+<br>
+<br>
+<br>
+<button id="btnScrollToTopp">
+    <i class="material-icons">arrow_upward</i>
+</button>
     <div class="container">
     <div class="row">
   <div class="col-sm-6">
@@ -42,13 +164,10 @@ include_once 'NavMenu.php';
     </div>
   </div>
   <br>
+
   <div class="col-sm-6">
-    <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum voluptas, aut ea quae!
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum voluptas, aut ea quae!
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum voluptas, aut ea quae!
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum voluptas, aut ea quae!	
+    <h5 class="card-title"><?php meta6($nyelv)?></h5>
+        <p class="card-text"><?php index1($nyelv) ?></p>
       </div>
     </div>
   </div>
@@ -61,14 +180,10 @@ include_once 'NavMenu.php';
       <div class="col-sm-6">
         
         <h5 class="card-title">
-        <div class="btn btn-watb btn-watb-border" style="border: 1px solid goldenrose;">Lorem ipsum dolor sit amet</div>
+        <div class="btn btn-watb btn-watb-border" style="border: 1px solid goldenrose;"><?php meta5($nyelv) ?></div>
         </h5>
         <div class="btn btn-watb btn-watb-border"></div>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum voluptas, aut ea quae!
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum voluptas, aut ea quae!
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum voluptas, aut ea quae!
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum voluptas, aut ea quae!	
+        <p class="card-text"><?php index2($nyelv) ?></p>	
       </div>
       <br>
       <div class="col-sm-6">
@@ -118,6 +233,12 @@ include_once 'footer.php';
         $(".menu > ul").removeClass('show-on-mobile');
     });
 
+</script>
+<script>
+    const btnScrollToTopp = document.querySelector("#btnScrollToTopp");
+    btnScrollToTopp.addEventListener("click", function () {
+    $("html, body").animate({scrollTop: 0}, "slow");
+    });
 </script>
 </body>
 </html>

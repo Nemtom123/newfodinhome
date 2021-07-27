@@ -1,6 +1,6 @@
 .header{
-    background-image: url(images/10.jpg);
-    background-repeat: no-repeat;
+    background-image: url(images/index/10.jpg);
+    background-repeat: repeat;
     background-position: center;
     width: auto;
     max-height: 600px;

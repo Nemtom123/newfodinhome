@@ -2,22 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3c75f57-74d4-4e20-8ae9-2330f2bb2a59" name="Default" comment="newfodinhome /2021.06.23-27 23:09 footer">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login/FooterPdo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login/footerInline.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login/footer_mentes.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login/footeren.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login/nemSzerkesztheto.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/OldalakPdo.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/OldalakPdo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/indexOldalSzerkesztes.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/indexOldalSzerkesztes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/indexOldalakSzerkesztesEn.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/indexOldalakSzerkesztesEn.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/keres.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/keres.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/oldalakSzerkesztes.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/oldalakSzerkesztes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/oldalakSzerkesztesEn.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/oldalakSzerkesztesEn.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/oldalak_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/oldalak_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/oldalak_rogzit.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/oldalak_rogzit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NavMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/NavMenu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oldal1.php" beforeDir="false" afterPath="$PROJECT_DIR$/oldal1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oldal2.php" beforeDir="false" afterPath="$PROJECT_DIR$/oldal2.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +173,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../php/php.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -267,6 +259,8 @@
       <workItem from="1625378394611" duration="20175000" />
       <workItem from="1625500707638" duration="312000" />
       <workItem from="1625501050888" duration="4414000" />
+      <workItem from="1626725099669" duration="519000" />
+      <workItem from="1627243109798" duration="597000" />
     </task>
     <task id="LOCAL-00001" summary="newfodinhome /2021.04.14 13:58">
       <created>1618401688905</created>
@@ -404,6 +398,11 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
         <entry key="fd577bd4-5fc9-4490-adff-a8aabb34e9d3">
           <value>
             <State>
@@ -437,9 +436,6 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

@@ -12,15 +12,20 @@ Body - not related to megamenu
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 body {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 * {
     box-sizing: border-box;
 }
 
-a {
-    color: #FFFFFF;
+
+
+.szinek:before{
+    color:#9e1d1d;
+}
+.szinek.ahover:after{
+    color:#111827;
 }
 
 .description {
@@ -48,7 +53,9 @@ Screen style's
 .menu-container {
     width: 100%;
     margin: 0 auto;
-    background: #111827;
+    background: #FFFFFF; /*  fekete  */ 
+    position: fixed; /*  fixre */
+    z-index: 10;
 }
 
 .menu-mobile {
@@ -103,32 +110,50 @@ Screen style's
 
 .menu > ul > li {
     float: left;
-    background: #111827;
+    background: #FFFFFF; /*  fekete  */ 
+    color: #111827;
     padding: 0;
     margin: 0;
 }
 
 .menu > ul > li a {
     text-decoration: none;
-    padding: 1.5em 3em;
+    padding: 1.5em 1.5em;
     display: block;
+    color: #111827;  /* üres volt */
+    font-family: Raleway;
+    font-weight: 300;
 }
 
-.menu > ul > li:hover {
-    background: #f0f0f0;
+.menu > ul > li:hover{
+    background-color: #FFFFFF;
+    color:#111827  !important;
+}
+
+.menu li.selected:after, .menu li:hover:after
+{
+    background-color: rgb(253, 253, 253);
+    color:#111827  !important;
+
+    background-color: rgb(253, 253, 253);
+    color:#111827  !important;
 }
 
 .menu > ul > li > ul {
     display: none;
     width: 100%;
-    background: #f0f0f0;
+    background: #FFFFFF;
     padding: 20px;
     position: absolute;
     z-index: 99;
     left: 0;
     margin: 0;
     list-style: none;
+    height: auto;
+    max-height: 410px;
     box-sizing: border-box;
+    overflow-x: hidden;
+    border: 1px solid rgba(234, 183, 30, 0.95);
 }
 
 .menu > ul > li > ul:before,
@@ -215,6 +240,7 @@ Mobile style's
     }
     .menu-mobile {
         display: block;
+        background: #111827;
     }
     .menu-dropdown-icon:before {
         display: block;

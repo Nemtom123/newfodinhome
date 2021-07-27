@@ -150,7 +150,10 @@ ob_start();
                             <div class="container-fluid">
                                 <div class="row">
                                     <div class="credits ml-auto">
-                                        <span class="copyright">
+                                        <span class="copyright" >
+                                            <br>
+                                            <br>
+                                            <br>
                                             © Fodinhome Kft <?php setlocale(LC_ALL, 'hungarian.UTF-8');
                                                             echo strftime("%Y %B %d %A", time()); ?>
                                         </span>

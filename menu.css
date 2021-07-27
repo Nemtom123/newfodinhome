@@ -9,19 +9,37 @@ body{
 a {
     color: #fff;
 }
+a:link {
+    color: #ffffff;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: white;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: rgb(170, 163, 71) !important;
+  }
+  
+  /* selected link */
+  a:active {
+    color: blue;
+  }
 .menu {
     width: 100%;
 }
 .menu-container {
     margin: 0 auto;
-    background: #111827;
-    color: white;
+    background: #ffffff; /* itt fekete */
+    color: black;
 }
 .menu a.logo {
     display: inline-block;
     padding: 1.5em 3em;
     float: left;
-    color: #ffffff;
+    color: #0c0c0c;
     font-weight: 100;
 }
 .menu img {
@@ -54,7 +72,7 @@ a {
 }
 .menu > ul {
     margin: 0 auto;
-    width: 80%;
+    width: 10%;
     list-style: none;
     padding: 0;
     position: relative;
@@ -120,7 +138,11 @@ a {
     border-bottom: 1px solid #fff;
 }
 .menu > ul > li > ul > li a:hover{
-    color:#fff;
+    color:#111827;
+}
+
+.menu > ul > li > ul > li a:after{
+    color:#111827;
 }
 .menu > ul > li > ul > li > ul {
     display: block;
@@ -310,5 +332,6 @@ Mobile style's
         border-radius: .25rem;
         transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     }
+    
 
 }
